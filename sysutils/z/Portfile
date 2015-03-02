@@ -1,0 +1,27 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        rupa z aec4df7d4004afd7abbdd61ffada98788bf6a9bb
+
+categories          sysutils
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         z keeps track of where you've been and provides a convenient way to jump to directory that you actually use
+long_description    ${name}: ${description}
+homepage            https://github.com/rupa/z
+
+supported_archs     noarch
+checksums           rmd160  61e5b4f36fcef4dcf79b352f50e5532e4cebba8a \
+                    sha256  fba92f76b479cbfa3a5100651b65ec6160fae4bbb05dc27239078e2859974670
+use_configure       no
+
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/z.sh ${destroot}${prefix}/lib
+    xinstall -m 644 ${worksrcpath}/z.1 ${destroot}${prefix}/share/man/man1
+}
