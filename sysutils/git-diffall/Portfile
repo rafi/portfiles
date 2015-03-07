@@ -1,0 +1,26 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        thenigan git-diffall b06b63c76971cd6551ca67f1c6bd477948aaa94a
+
+categories          sysutils
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Script to perform directory diffs using an external diff tool in Git
+long_description    ${name}: ${description}
+homepage            https://github.com/thenigan/git-diffall
+
+supported_archs     noarch
+checksums           rmd160  8cee07b48f930d57e52fde5206c530a905065453 \
+                    sha256  0e817717ba96a8bfbf0f693c84acfed1ee0b624b2be8f8d1493614156bff3530
+use_configure       no
+
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/git-diffall ${destroot}${prefix}/bin
+}
