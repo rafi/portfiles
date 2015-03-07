@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        carnager clerk 3a50476ce000d4d1a76adc14ad2b59b8d39c0b1a
+github.setup        carnager clerk 02cc73f99d76e4b4db6fada7cc06a32d8a46bc69
 
 categories          sysutils
 platforms           darwin
@@ -15,8 +15,8 @@ long_description    ${name}: ${description}
 homepage            https://github.com/carnager/clerk
 
 supported_archs     noarch
-checksums           rmd160  466077b62934680704ac90bf2f95ccc531b1a662 \
-                    sha256  ed1b51027ba757b9d85e6a91c35704366e9324e6cabbf0e44104b2cbbbd1979e
+checksums           rmd160  18ff19faf32215f559f6d798a0657c38ead54951 \
+                    sha256  26bd438de10427b3cc99c1a10a374d8cb42f53562268b6d0dec28bbc72e37eb3
 use_configure       no
 depends_lib         port:mppc
 
@@ -24,7 +24,8 @@ build {}
 
 destroot {
     xinstall -m 755 ${worksrcpath}/clerk ${destroot}${prefix}/bin
-    xinstall -m 755 ${worksrcpath}/clerk_updater ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/clerk_helper ${destroot}${prefix}/bin
     xinstall -m 755 -d ${destroot}${prefix}/share/doc/${name}
     xinstall -m 644 ${worksrcpath}/config.clerk ${destroot}${prefix}/share/doc/${name}
+    xinstall -m 644 ${worksrcpath}/sticker_import.sh ${destroot}${prefix}/share/doc/${name}
 }
