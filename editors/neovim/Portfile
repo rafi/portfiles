@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        neovim neovim 85f5115723e22febea98764710d0b5f18e2c9330
+version             0.0.0-alpha+201503072231
+
+categories          editors
+platforms           darwin
+
+description         Vim's rebirth for the 21st century.
+long_description    Neovim, Vim for the next generation, aims to be a modern \
+                    refactor of Vim, the popular text editor based on 'Vi'.
+homepage            http://www.neovim.org
+license             Apache-2 Vim GPL-2+
+maintainers         cassedanne.com:franck
+
+checksums           md5     8e244b2b9db196946c3e4d63786bb178 \
+                    sha1    b03a9973ce2ea4b0c9c2bdae876591579249e007 \
+                    rmd160  28f48900a8b21cd26580577ff1887e2b87a61056
+
+depends_lib-append  port:gettext
+
+depends_build-append \
+                    port:pkgconfig \
+                    port:autoconf \
+                    port:automake \
+                    port:libtool \
+                    port:luarocks
+
+build.args          CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=${prefix}\"
+
+use_configure       no
+
+use_parallel_build  yes
