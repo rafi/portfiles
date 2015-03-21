@@ -1,0 +1,27 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        rupa v 3007042544734d8091b923d5de3d2e7f8d4ea0d7
+
+categories          editors
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         v  uses  viminfo's list of recently edited files to open one quickly no matter where you are in the filesystem.
+long_description    ${name}: ${description}
+homepage            https://github.com/rupa/v
+
+supported_archs     noarch
+checksums           rmd160  2b8e6a0cb7adb5acf18961f1102306956355d488 \
+                    sha256  757a603d40e942be2e182ddfc06b2799bbaba3b5563e0f55a2d65cc815191bf3
+use_configure       no
+
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/v ${destroot}${prefix}/bin
+    xinstall -m 644 ${worksrcpath}/v.1 ${destroot}${prefix}/share/man/man1
+}
