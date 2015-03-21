@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        carnager clerk 196427bec0326513e9044ecf4da84c9dee22228d
+github.setup        carnager clerk 9ac7c0cd802e2b7e8322f0a4894bf86c39012f07
 
 categories          sysutils
 platforms           darwin
@@ -15,8 +15,8 @@ long_description    ${name}: ${description}
 homepage            https://github.com/carnager/clerk
 
 supported_archs     noarch
-checksums           rmd160  f05929bb76fadecaee53d604a47d5401f087c5b4 \
-                    sha256  9c8127b808a894c29d8783568647306c04d8c30b0960c189f7a5aa5d46dd0543
+checksums           rmd160  57744c84dc444f5a2af58a812934375fc409aff9 \
+                    sha256  7f863a7e36befb05514b90458f6cbc31e6874e661a1b658bebc1f437e1f3551b
 use_configure       no
 depends_lib         port:mppc
 
