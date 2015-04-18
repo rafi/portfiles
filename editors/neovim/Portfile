@@ -4,8 +4,8 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        neovim neovim 85f5115723e22febea98764710d0b5f18e2c9330
-version             0.0.0-alpha+201503072231
+github.setup        neovim neovim a88e2f4fd4c3e10aabd41e758cc845332be013da
+version             0.0.0-alpha+201504181639
 
 categories          editors
 platforms           darwin
@@ -17,9 +17,9 @@ homepage            http://www.neovim.org
 license             Apache-2 Vim GPL-2+
 maintainers         cassedanne.com:franck
 
-checksums           md5     8e244b2b9db196946c3e4d63786bb178 \
-                    sha1    b03a9973ce2ea4b0c9c2bdae876591579249e007 \
-                    rmd160  28f48900a8b21cd26580577ff1887e2b87a61056
+checksums           md5     147976f7af08a15f8e15ad09071ebaf8 \
+                    sha1    f3aeafab0f43e0464277b6aabbde60ffd14e39de \
+                    rmd160  f46a1f6cacece5d4e8f2beaad27dc91974da08b5
 
 depends_lib-append  port:gettext
 

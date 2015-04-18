@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        rupa z aec4df7d4004afd7abbdd61ffada98788bf6a9bb
+github.setup        rupa z d5adc9a6239c2ee44309fd78bca68f301eb0d45a
 
 categories          sysutils
 platforms           darwin
@@ -15,8 +15,8 @@ long_description    ${name}: ${description}
 homepage            https://github.com/rupa/z
 
 supported_archs     noarch
-checksums           rmd160  61e5b4f36fcef4dcf79b352f50e5532e4cebba8a \
-                    sha256  fba92f76b479cbfa3a5100651b65ec6160fae4bbb05dc27239078e2859974670
+checksums           rmd160  b4753fea7d3d89e5f875ac36ddf13fb992ad8e28 \
+                    sha256  d292e9fc6d95437b791496d38efd27e27566ab24f30afafe1b687b86a64fb0ad
 use_configure       no
 
 build {}
