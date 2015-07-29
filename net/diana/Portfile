@@ -1,0 +1,27 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        baskerville diana master
+
+categories          sysutils
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         A command line interface to the aria2 daemon
+long_description    ${name}: ${description}
+homepage            https://github.com/baskerville/diana
+
+supported_archs     noarch
+checksums           rmd160  61c95996b85230034f8013235526cfc4864f056e \
+                    sha256  0cda3f08948b020f60b69d5d8469858ea43d2a1a70eed4e4a75ed051c2d44d70
+use_configure       no
+
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/dad ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/diana ${destroot}${prefix}/bin
+}
