@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        baskerville sxhkd 8433918de3acf026a3c134a63af631e60d76837f
+
+categories          x11
+platforms           darwin
+license             BSD 2-clause
+
+maintainers         gmail.com:justrafi
+description         Simple X hotkey daemon
+long_description    ${name}: \
+                    sxhkd is a simple X hotkey daemon with a powerful and compact configuration syntax.
+homepage            https://github.com/baskerville/sxhkd
+
+checksums           rmd160  49b9dc20e1df1e871fe9efe041d382e55fb314ec \
+                    sha256  0ca9e7c0f63535569a197fe75c0c42ec78b78982ac148b2a47c5b73ae4b29816
+
+depends_lib         port:xorg-xcb-util-keysyms
+
+use_configure           no
+
+build.env-append        PKG_CONFIG_PATH=$prefix/lib/pkgconfig \
+                        CFLAGS="${configure.cflags} [get_canonical_archflags]" \
+                        LDFLAGS="${configure.ldflags} [get_canonical_archflags]"
+
+build.args-append       CC=${configure.cc} \
+                        LD=${configure.cc} \
+                        COLOR=0 \
+                        VERBOSE=
+
+destroot.args-append    PREFIX=${prefix} \
+                        SYSCONFDIR=${prefix}/etc/ \
+                        COLOR=0 \
+                        VERBOSE=

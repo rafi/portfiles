@@ -1,0 +1,40 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        baskerville bspwm dccb5e7be233ef7db62d4a95a824cb84a4c1ffe3
+
+categories          x11 x11-wm
+platforms           darwin
+license             BSD 2-clause
+
+maintainers         gmail.com:justrafi
+description         A tiling window manager based on binary space partitioning
+long_description    ${name}: \
+                    bspwm is a tiling window manager that represents windows as the leaves of a full binary tree. \
+                    It is controlled and configured via bspc.
+homepage            https://github.com/baskerville/bspwm
+
+checksums           rmd160  1fddd4c3e8764e94d2fce9ebb7ae2ba860291e78 \
+                    sha256  4aa4b1fc409f37fbef2e847bcde194498aec9178d8d15d6552fea5879968b0dd
+
+depends_lib         port:xorg-xcb-util \
+                    port:xorg-xcb-util-wm \
+                    port:xorg-libxcb
+
+use_configure           no
+
+build.env-append        PKG_CONFIG_PATH=$prefix/lib/pkgconfig \
+                        CFLAGS="${configure.cflags} [get_canonical_archflags]" \
+                        LDFLAGS="${configure.ldflags} [get_canonical_archflags]"
+
+build.args-append       CC=${configure.cc} \
+                        LD=${configure.cc} \
+                        COLOR=0 \
+                        VERBOSE=
+
+destroot.args-append    PREFIX=${prefix} \
+                        SYSCONFDIR=${prefix}/etc/ \
+                        COLOR=0 \
+                        VERBOSE=
