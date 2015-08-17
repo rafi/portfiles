@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        baskerville bspwm dccb5e7be233ef7db62d4a95a824cb84a4c1ffe3
+github.setup        baskerville bspwm fea7dbc26c7f9c480261ebddb44f5c0cea389303
 
 categories          x11 x11-wm
 platforms           darwin
@@ -16,8 +16,8 @@ long_description    ${name}: \
                     It is controlled and configured via bspc.
 homepage            https://github.com/baskerville/bspwm
 
-checksums           rmd160  1fddd4c3e8764e94d2fce9ebb7ae2ba860291e78 \
-                    sha256  4aa4b1fc409f37fbef2e847bcde194498aec9178d8d15d6552fea5879968b0dd
+checksums           rmd160  4ce04d20737b831b7333d6781f380e8fd7e077d9 \
+                    sha256  20e0d0a93a236f865169c860c9da5f8dd7a579c6e5ae747612796ffa396dbba9
 
 depends_lib         port:xorg-xcb-util \
                     port:xorg-xcb-util-wm \
