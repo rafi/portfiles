@@ -1,0 +1,27 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        jeffkaufman icdiff fc4e100b855ecfed8f885e5119bc7218f810830e
+
+categories          textproc
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Improved colored diff
+long_description    ${name}: ${description}
+homepage            http://www.jefftk.com/icdiff
+
+supported_archs     noarch
+checksums           rmd160  b8991b622365024f4fd1fbc3bed4a0e00b20a60f \
+                    sha256  94120b129d6af95364587533b8e2449b295dbed7b17741411dd3cae89f6dcab6
+use_configure       no
+
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/icdiff ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/git-icdiff ${destroot}${prefix}/bin
+}
