@@ -1,0 +1,29 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+
+name                entr
+version             3.3
+categories          sysutils
+platforms           darwin
+license             ISC
+
+maintainers         gmail.com:justrafi
+description         Run arbitrary commands when files change
+long_description    ${name}: ${description}
+homepage            http://entrproject.org/
+master_sites        http://entrproject.org/code/
+distname            entr-${version}
+worksrcdir          eradman-entr-220131754e1c
+
+supported_archs     noarch
+checksums           rmd160  99782e73efff005947d8ef94d9536ddf795fdc89 \
+                    sha256  701cb7b0a72b6c9ba794ad7cc15b6ebcc2e0c978bb6906c8ae407567a044461f
+use_configure       no
+
+pre-build {
+    file copy ${worksrcpath}/Makefile.macos ${worksrcpath}/Makefile
+}
+
+destroot.args-append    PREFIX=${prefix}
