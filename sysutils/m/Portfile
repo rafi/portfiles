@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        rgcr m-cli master
+
+categories          sysutils
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Swiss Army Knife for Mac OS X
+long_description    ${name}: ${description}
+homepage            https://github.com/rgcr/m-cli
+
+supported_archs     noarch
+checksums           rmd160  ae6475de0f99ef3182a41287df9092118a99487d \
+                    sha256  82f714ee9850ab6c697121a3b9806fbe94b84c4fed6de54f1d3dc82bfbbe84cd
+use_configure       no
+
+patchfiles          patch_opt_local.diff
+
+build {}
+
+destroot {
+    xinstall -m 755 -d ${destroot}${prefix}/libexec/${name}
+    xinstall -m 755 -d ${destroot}${prefix}/libexec/${name}/plugins
+    xinstall -m 644 -W ${worksrcpath}/lib colors.sh \
+        functions.sh ${destroot}${prefix}/libexec/${name}
+    xinstall -m 755 -W ${worksrcpath}/plugins \
+        battery dir finder gatekeeper info network \
+        ntp safeboot service sleep trash volume \
+        wifi bluetooth disk firewall hostname lock nosleep \
+        restart screensaver shutdown timezone user wallpaper \
+        ${destroot}${prefix}/libexec/${name}/plugins
+    xinstall -m 775 ${worksrcpath}/m ${destroot}${prefix}/bin/m
+}

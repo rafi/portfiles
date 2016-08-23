@@ -1,0 +1,32 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        so-fancy diff-so-fancy master
+
+categories          devel
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Good-lookin' diffs. Actually, nah. The best-lookin' diffs.
+long_description    ${name}: ${description}
+homepage            https://github.com/so-fancy/diff-so-fancy
+
+supported_archs     noarch
+checksums           rmd160  6b478f04511ed588968f19923d56c66d543bc4d4 \
+                    sha256  4ad63f490ad6c471c9549f4ae4b9659300a7f5857f4f3038e0592702569ee68e
+use_configure       no
+
+post-configure {
+    reinplace -E {s|/libexec/|/../libexec/|g} ${worksrcpath}/diff-so-fancy
+}
+
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/diff-so-fancy ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/third_party/diff-highlight/diff-highlight ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/libexec/diff-so-fancy.pl ${destroot}${prefix}/libexec
+}
