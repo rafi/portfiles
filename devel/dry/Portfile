@@ -1,0 +1,47 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        moncho dry 0.6-alpha.2 v
+github.tarball_from releases
+extract.suffix
+
+categories          devel
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         A Docker container manager for the terminal
+long_description    ${name}: ${description}
+homepage            https://github.com/${github.author}/${github.project}
+
+supported_archs     x86_64 i386
+checksums           ${name}-${os.platform}-amd64 \
+                    rmd160  177be97597b67d2762eaa3ad1ee9410901903b29 \
+                    sha256  e7d1051bf176e226fb5bfec1a18803dc58978ed0b59025fbf67a90559d6c1c89 \
+                    ${name}-${os.platform}-386 \
+                    rmd160  243c4844c11e70d99aad0854b86ca87ae21f17cb \
+                    sha256  d79c7e7b1f044696a2e10cfc148e83c6a44cfe10e737069b903c4e9c7eba8e8e
+
+use_configure       no
+
+if {$build_arch == "x86_64"} {
+    distname ${name}-${os.platform}-amd64
+} else {
+    distname ${name}-${os.platform}-386
+}
+
+extract {
+    file copy ${distpath}/${distfiles} ${workpath}/${distname}
+}
+post-extract {}
+build {}
+destroot {
+    xinstall -m 0755 ${workpath}/${distname} ${destroot}${prefix}/bin/${name}
+}
+
+livecheck.type      regex
+livecheck.url       ${homepage}/releases
+livecheck.regex     /${github.author}/${github.project}/releases/tag/${github.tag_prefix}(${github.version})

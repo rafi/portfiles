@@ -1,0 +1,40 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        pocke lemonade 1.1.0 v
+github.tarball_from releases
+extract.suffix
+
+categories          devel
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Lemonade is a remote utility tool. (copy, paste and open browser) over TCP.
+long_description    ${name}: ${description}
+homepage            https://github.com/${github.author}/${github.project}
+
+supported_archs     x86_64 i386
+checksums           ${name}_${os.platform}_386.tar.gz \
+                    rmd160  177be97597b67d2762eaa3ad1ee9410901903b29 \
+                    sha256  e7d1051bf176e226fb5bfec1a18803dc58978ed0b59025fbf67a90559d6c1c89 \
+                    ${name}_${os.platform}_amd64.tar.gz \
+                    rmd160  c35cbb079533061601abee6ce5fbb36d87b441dc \
+                    sha256  179ca1bd01ec139626130d62478125d745a0263b798960b520a8c92a526855b3
+
+use_configure   no
+
+if {$build_arch == "x86_64"} {
+    distname ${name}_${os.platform}_amd64.tar.gz
+} else {
+    distname ${name}_${os.platform}_386.tar.gz
+}
+
+extract.mkdir yes
+build {}
+destroot {
+    xinstall -m 0755 ${workpath}/${distname}/${name} ${destroot}${prefix}/bin
+}

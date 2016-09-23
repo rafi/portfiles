@@ -1,0 +1,43 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        jfrazelle dockfmt master
+
+categories          devel
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Dockerfile format and parser
+long_description    ${name}: ${description}
+homepage            https://github.com/${github.author}/${github.project}
+
+supported_archs     x86_64 i386
+checksums           rmd160  8fbb56bc0a67cfacbd610cc09aefaa20918bc3cc \
+                    sha256  7293d447fb768e258170491e614e25ed605d6149b44cd379cc2a85c345d795a2
+
+depends_build   port:go
+use_configure   no
+dist_subdir     go
+
+set gopath      ${workpath}/gopath
+set gosrc       ${gopath}/src
+
+build.target    build
+build.env       GOPATH="${gopath}"
+
+post-extract {
+    file mkdir ${gosrc}
+    move {*}[glob ${workpath}/${name}-${github.version}/vendor/*] ${gosrc}
+    file mkdir ${gosrc}/github.com/${github.author}
+    ln -s ${worksrcpath} ${gosrc}/github.com/${github.author}/${github.project}
+}
+
+destroot {
+    xinstall -d ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/${name}-${version} ${destroot}${prefix}/bin/${name}
+}
+
+livecheck.regex     archive/[join ${github.tag_prefix} ""](\[^"r-\]+)${extract.suffix}

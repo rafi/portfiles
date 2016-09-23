@@ -1,0 +1,69 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        junegunn fzf master
+
+categories          devel
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         A command-line fuzzy finder
+long_description    ${name}: ${description}
+homepage            https://github.com/${github.author}/${github.project}
+
+supported_archs     noarch
+checksums           ${name}-${version}.tar.gz \
+                    rmd160  2ede4e10af2c46f4d5cdbc39175eee8c12bd431b \
+                    sha256  560c389c63a76e88d910c7085cc3eff3cc97012f28eca7a323f95d1d05c57623
+
+depends_build   port:go
+use_configure   no
+
+build.dir       ${worksrcpath}/src
+build.env       GOPATH="${workpath}"
+
+variant vim description {Vim integration} {}
+variant tmux description {Tmux integration helper command} {}
+variant bash_completion description {Fuzzy completion for bash} {
+    depends_run-append path:etc/bash_completion:bash-completion
+}
+variant key_bindings description {Key bindings for command line} {
+    depends_run-append path:etc/bash_completion:bash-completion
+}
+
+post-extract {
+    reinplace -E {s|/bin/bash|/usr/bin/env\ bash|} ${worksrcpath}/shell/completion.bash
+}
+
+destroot {
+    xinstall -d ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/src/${name}/${name}-darwin_amd64 ${destroot}${prefix}/bin/${name}
+
+    if {[variant_isset tmux]} {
+        xinstall -m 755 ${worksrcpath}/bin/${name}-tmux ${destroot}${prefix}/bin
+    }
+
+    if {[variant_isset bash_completion] || [variant_isset key_bindings]} {
+        set completion-dir ${destroot}${prefix}/share/bash-completion/completions
+        xinstall -d ${completion-dir}
+    }
+
+    if {[variant_isset bash_completion]} {
+        xinstall -m 644 ${worksrcpath}/shell/completion.bash ${completion-dir}/${name}
+    }
+
+    if {[variant_isset key_bindings]} {
+        xinstall -m 644 ${worksrcpath}/shell/key-bindings.bash ${completion-dir}/${name}-key-bindings
+    }
+
+    if {[variant_isset vim]} {
+        set vim-dir ${destroot}${prefix}/share/vim/vim80
+        xinstall -d ${vim-dir}/plugin
+        xinstall -m 644 ${worksrcpath}/plugin/${name}.vim ${vim-dir}/plugin
+    }
+}
+
+livecheck.regex     archive/[join ${github.tag_prefix} ""](\[^"r-\]+)${extract.suffix}

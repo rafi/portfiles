@@ -1,0 +1,117 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        cortex gopass master
+
+categories          devel
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Gopass: A simple password-store GUI
+long_description    ${name}: ${description}
+homepage            https://github.com/${github.author}/${github.project}
+
+supported_archs     x86_64 i386
+checksums           ${name}-${version}.tar.gz \
+                    rmd160  3c6537c52eabe046929d135c9287152700a671c5 \
+                    sha256  36efdafeb86e23b06f2b56f8740d5cf98d20f58f01852b3080518d998776112c
+
+depends_lib     port:qt5 port:gpgme port:qt5-qtquickcontrols
+depends_build   port:go
+use_configure   no
+dist_subdir     go
+
+# Utility for go-vendoring codes
+set go.vendors {}
+
+# go.vendors-append name1 ver1 name2 ver2...
+proc go.vendors-append {args} {
+    global go.vendors
+
+    foreach {imp_name vers} ${args} {
+        set vlist [split ${imp_name} /]
+
+        set vdomain [lindex ${vlist} 0]
+        set vuser [lindex ${vlist} 1]
+        set vname [lindex ${vlist} 2]
+
+        # NOTE: now expects github.com or golang.org
+        switch -exact ${vdomain} {
+            github.com { set ghuser ${vuser} }
+            golang.org { set ghuser golang }
+        }
+
+        set fname ${ghuser}-${vname}
+        lappend go.vendors [list ${fname} ${imp_name} ${vers}]
+
+        global ${vname}.version
+        set ${vname}.version ${vers}
+
+        master_sites-append https://github.com/${ghuser}/${vname}/tarball/${vers}:${fname}
+        distfiles-append    ${fname}-${vers}.tar.gz:${fname}
+    }
+}
+
+# dependencies to build. remember revbump when you change version of dependencies.
+# https://github.com/peco/peco/blob/master/glide.lock
+go.vendors-append   golang.org/x/crypto           8e06e8ddd9629eb88639aba897641bff8031f1d3 \
+                    github.com/atotto/clipboard   bb272b845f1112e10117e3e45ce39f690c0001ad \
+                    github.com/cortex/gpgme       531a4c667ce62da7e8ce9922476a7be8423b1afb \
+                    github.com/rjeczalik/notify   7e20c15e6693a7d6ad269a94b70ed68bc4a875a7 \
+                    github.com/limetext/qml-go    6baf9961e8871636c6e21b43798861a5eb27fc4e
+
+
+checksums-append    golang-crypto-${crypto.version}.tar.gz \
+                        md5     31c5de162b8f17f13ee6eb5b3d0ddf8b \
+                        sha1    ec13168bdc0893c1b091c4b5ea76174fa8f34914 \
+                        sha256  b7df62ddc8259a2ba688a24322cfc8474e64f791db52bf6f5afee911f9a001ab \
+                    atotto-clipboard-${clipboard.version}.tar.gz \
+                        md5     b9e7279d679be18e3a57a78050fd6394 \
+                        sha1    8b98cf18e86dd2b3dbe56856b1752ce6ca04b448 \
+                        sha256  a481dc4dd08a3b3e51743a7f217e3e0b382b8b1a20b72dcf3a92b10b145ad31a \
+                    cortex-gpgme-${gpgme.version}.tar.gz \
+                        md5     206f161a029f46c6420726787e419e1d \
+                        sha1    3d813a7bded0546a3a574c0c475bd2a5d52258ce \
+                        sha256  a5930ae2076ed8377c75bb64d0f42fbcfab24d66227f6bd5beafaaa55626cd9d \
+                    rjeczalik-notify-${notify.version}.tar.gz \
+                        md5     58f90642214740991ef6c6155597bd90 \
+                        sha1    dea3c392c9a464a42ffe82f8a14ec0c36001a1a1 \
+                        sha256  5ccc58b20234969b53c9a5b5236ca4c1fb60dab1e087ebd632470b21cd4d3a10 \
+                    limetext-qml-go-${qml-go.version}.tar.gz \
+                        md5     5003a5711e7ac5003fa218abc30a8554 \
+                        sha1    a369b6b11ca7a6a4533b3f3d1c615868394f3829 \
+                        sha256  5a8e658197b5aed429bc90efb3279e637f4e019be00e64d47c87293e7ecc9ae9
+
+set gopath      ${workpath}/gopath
+set gosrc       ${gopath}/src
+post-extract {
+    file mkdir ${gosrc}/github.com/${github.author}
+    ln -s ${worksrcpath} ${gosrc}/github.com/${github.author}/${github.project}
+
+    reinplace -E {s|/proglottis/|/cortex/|g} ${worksrcpath}/keyinfo.go
+    reinplace -E {s|/proglottis/|/cortex/|g} ${worksrcpath}/pass.go
+
+    foreach vlist ${go.vendors} {
+        set fname [lindex ${vlist} 0]
+        set imp_name [lindex ${vlist} 1]
+        file mkdir ${gosrc}/[file dirname ${imp_name}]
+        move [glob ${workpath}/${fname}-*] ${gosrc}/${imp_name}
+    }
+}
+
+build.cmd       go
+build.target    build
+build.args
+build.env       GOPATH="${gopath}" \
+                CGO_CFLAGS="-I${prefix}/include" \
+                CGO_LDFLAGS="-L${prefix}/lib"
+
+destroot {
+    xinstall -d ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/${name}-${version} ${destroot}${prefix}/bin/${name}
+}
+
+livecheck.regex     archive/[join ${github.tag_prefix} ""](\[^"r-\]+)${extract.suffix}
