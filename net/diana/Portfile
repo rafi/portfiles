@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        baskerville diana 95d719a14b044b5b225e88ceab2e4eb42015531f
+github.setup        baskerville diana master
 
 categories          sysutils
 platforms           darwin
@@ -15,8 +15,8 @@ long_description    ${name}: ${description}
 homepage            https://github.com/baskerville/diana
 
 supported_archs     noarch
-checksums           rmd160  baf394d790c3159b4152f5ffd0e1d9017e1d0051 \
-                    sha256  b32272ff106f5b7154c8fa7e0a4c958782518616b3dfe40290a3ffa64adac449
+checksums           rmd160  61c95996b85230034f8013235526cfc4864f056e \
+                    sha256  0cda3f08948b020f60b69d5d8469858ea43d2a1a70eed4e4a75ed051c2d44d70
 use_configure       no
 
 build {}

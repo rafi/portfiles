@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        rupa v 3007042544734d8091b923d5de3d2e7f8d4ea0d7
+github.setup        rupa v master
 
 categories          editors
 platforms           darwin
