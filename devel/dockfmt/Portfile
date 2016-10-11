@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        jfrazelle dockfmt 38382d87037e5a59b0a8e218bb6d162ed96522db
+github.setup        jessfraz dockfmt 38382d87037e5a59b0a8e218bb6d162ed96522db
 
 categories          devel
 platforms           darwin
