@@ -1,0 +1,31 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        docker docker 1.12.2-rc3 v
+
+name                docker-bash-completion
+categories          devel
+platforms           darwin
+license             Docker
+
+maintainers         gmail.com:justrafi
+description         bash completion file for core docker commands
+long_description    ${name}: ${description}
+
+supported_archs     noarch
+checksums           rmd160  cf16787a23a2e35768b2259f0680e916190d57de \
+                    sha256  60c3a3410bd98eca12987c9f0e568dd606279a064ccb66556c96a7785e4e9591
+
+use_configure       no
+
+depends_run-append  path:etc/bash_completion:bash-completion
+
+build {}
+
+destroot {
+    xinstall -d -m 0755 ${destroot}${prefix}/etc/bash_completion.d
+    copy ${worksrcpath}/contrib/completion/bash/docker \
+        ${destroot}${prefix}/etc/bash_completion.d/docker
+}
