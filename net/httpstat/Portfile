@@ -9,6 +9,7 @@ set realname        httpstat
 github.setup        reorx ${realname} 1.2.1
 
 name                py-${realname}
+categories          net
 platforms           darwin
 supported_archs     noarch
 license             MIT

@@ -11,7 +11,8 @@ license             MIT
 
 maintainers         gmail.com:justrafi
 description         Improved colored diff
-long_description    ${name}: ${description}
+long_description    ${name}: ${description}. Show differences between files \
+                    in a two column view.
 homepage            http://www.jefftk.com/icdiff
 
 supported_archs     noarch

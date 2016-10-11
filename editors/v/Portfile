@@ -10,7 +10,7 @@ platforms           darwin
 license             MIT
 
 maintainers         gmail.com:justrafi
-description         v  uses  viminfo's list of recently edited files to open one quickly no matter where you are in the filesystem.
+description         v uses viminfo's list of recently edited files to open one quickly no matter where you are in the filesystem.
 long_description    ${name}: ${description}
 
 supported_archs     noarch
