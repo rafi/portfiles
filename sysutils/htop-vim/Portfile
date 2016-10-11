@@ -1,0 +1,31 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        hishamhm htop 2.0.2
+
+name                htop-vim
+categories          sysutils
+platforms           darwin
+license             GPL-2
+
+maintainers         cal openmaintainer
+description         htop is an interactive text-mode process viewer for Unix \
+                    systems.
+long_description    ${name}: ${description} It aims to be a better 'top'.
+
+checksums           rmd160  7260eba0678d3088b7a14f7c83661ac7e0c229b9 \
+                    sha256  1f0ede15a92fee95ee01748a17b67e4d7c52cce5ccdb8633fb2d5bdda1177c5f
+
+depends_build       port:autoconf \
+                    port:automake \
+                    port:libtool
+
+depends_lib         port:ncurses
+
+patchfiles          vim-keybindings.patch
+
+pre-configure {
+    system -W ${worksrcpath} "sh autogen.sh"
+}
