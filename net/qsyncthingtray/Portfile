@@ -1,0 +1,47 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           active_variants 1.1
+PortGroup           cmake 1.0
+PortGroup           github 1.0
+PortGroup           app 1.0
+PortGroup           qt5 1.0
+
+github.setup        sieren QSyncthingTray 0.5.2
+categories          net
+platforms           darwin
+license             LGPL-3.0
+
+maintainers         gmail.com:justrafi
+description         A Traybar Application for Syncthing written in C++
+long_description    ${name}: ${description}
+
+checksums           rmd160  76fe49ebb4440ea80cd869c0c16101baafa6be2b \
+                    sha256  c1d696eb2498fc839e5a21a0d83ff3f87f640f2fa9069b8fbaae0268ceb2bbd7
+
+default_variants    +webengine
+
+variant webengine conflicts webkit description {Use QtWebEngine} {
+    depends_lib-append  port:qt5-qtwebengine
+}
+
+variant webkit conflicts webengine description {Use QtWebView} {
+    depends_build          port:qt5-qtwebkit
+    configure.args-append -DQST_BUILD_WEBKIT=1
+}
+
+destroot {}
+
+app.executable      ${worksrcpath}/${name}.app/Contents/MacOS/${name}
+app.icon            resources/Syncthing.icns
+
+notes "******************************************************
+* QSyncthingTray does not come with Syncthing bundled.
+* Once you specifiy the path to the 'syncthing' binary it will
+* automatically spawn syncthing when you run QSyncthingTray.
+*
+* To start QSyncthingTray at boot (OS X):
+* 1. Go to System Preferences and Users & Groups
+* 2. Drag QSyncthingTray into the Login Items list
+******************************************************"
