@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        cortex gopass master
+github.setup        cortex gopass ce000de014f3b7fe2edcf7571980043c68d95609
 
 categories          devel
 platforms           darwin
@@ -15,8 +15,8 @@ long_description    ${name}: ${description}
 
 supported_archs     x86_64 i386
 checksums           ${name}-${version}.tar.gz \
-                    rmd160  3c6537c52eabe046929d135c9287152700a671c5 \
-                    sha256  36efdafeb86e23b06f2b56f8740d5cf98d20f58f01852b3080518d998776112c
+                    rmd160  634c07fda95c73a29cfd12e501c9e8d7929b8b75 \
+                    sha256  ea7c229476cd7f06b67527c0da6998b618289d640b56555e557f167cd53721ce
 
 depends_lib     port:qt5 port:gpgme port:qt5-qtquickcontrols
 depends_build   port:go

@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        Russell91 sshrc master
+github.setup        Russell91 sshrc 8d378138d686f91266e5bf8a489dd5c7985359db
 
 categories          sysutils net
 platforms           darwin
@@ -14,8 +14,8 @@ description         bring your .bashrc, .vimrc, etc. with you when you ssh
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  66ca4353a448f9b2a8f1f11d9668512502fec21b \
-                    sha256  05972d089af665cf03cda9011506d30541b7ee2187bb3fb425969cae14e10fce
+checksums           rmd160  1afcaabfa34ac7a975db5e433e5e78ed38ec24f7 \
+                    sha256  1e3b00e63b3dca443ca85b9152fcbfcffc71990fed1d332101895b045e3824f9
 use_configure       no
 
 build {}

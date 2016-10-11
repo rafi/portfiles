@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        rupa v master
+github.setup        rupa v 1.1 v
 
 categories          editors
 platforms           darwin
@@ -14,8 +14,8 @@ description         v  uses  viminfo's list of recently edited files to open one
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  2b8e6a0cb7adb5acf18961f1102306956355d488 \
-                    sha256  757a603d40e942be2e182ddfc06b2799bbaba3b5563e0f55a2d65cc815191bf3
+checksums           rmd160  573c6e596098445414d4916032148aec4a3ff666 \
+                    sha256  16fdf2b206936c3ebacc06926783eade8563d50e523e26f193b82dbf37b14d47
 use_configure       no
 
 build {}

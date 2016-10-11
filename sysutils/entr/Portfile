@@ -4,7 +4,7 @@
 PortSystem          1.0
 
 name                entr
-version             3.3
+version             3.6
 categories          sysutils
 platforms           darwin
 license             ISC
@@ -15,15 +15,16 @@ long_description    ${name}: ${description}
 homepage            http://entrproject.org/
 master_sites        http://entrproject.org/code/
 distname            entr-${version}
-worksrcdir          eradman-entr-220131754e1c
+worksrcdir          eradman-entr-c15b0be493fc
 
 supported_archs     noarch
-checksums           rmd160  99782e73efff005947d8ef94d9536ddf795fdc89 \
-                    sha256  701cb7b0a72b6c9ba794ad7cc15b6ebcc2e0c978bb6906c8ae407567a044461f
-use_configure       no
+checksums           rmd160  7bc74e6d0177a049990ed2eb4994949df5d55bfd \
+                    sha256  a42746d81c548d7e557d500f93422b8ec9731d719309eb2601b8be69ae0dc8eb
+
+use_configure         no
+destroot.args-append  PREFIX=${prefix}
 
 pre-build {
     file copy ${worksrcpath}/Makefile.macos ${worksrcpath}/Makefile
 }
 
-destroot.args-append    PREFIX=${prefix}

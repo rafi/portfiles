@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        jfrazelle dockfmt master
+github.setup        jfrazelle dockfmt 38382d87037e5a59b0a8e218bb6d162ed96522db
 
 categories          devel
 platforms           darwin
@@ -14,8 +14,8 @@ description         Dockerfile format and parser
 long_description    ${name}: ${description}
 
 supported_archs     x86_64 i386
-checksums           rmd160  8fbb56bc0a67cfacbd610cc09aefaa20918bc3cc \
-                    sha256  7293d447fb768e258170491e614e25ed605d6149b44cd379cc2a85c345d795a2
+checksums           rmd160  45a8b0e8abb19a4f724996b28833e1a42f38983c \
+                    sha256  ae4f7f4d2157c25bbc20e11c26a72095b75fec954bfe82876a6c9c09ec6a28ee
 
 depends_build   port:go
 use_configure   no

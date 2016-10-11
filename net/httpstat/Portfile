@@ -6,7 +6,7 @@ PortGroup           github 1.0
 PortGroup           python 1.0
 
 set realname        httpstat
-github.setup        reorx ${realname} master
+github.setup        reorx ${realname} 1.2.1
 
 name                py-${realname}
 platforms           darwin
@@ -17,8 +17,8 @@ maintainers         gmail.com:justrafi
 description         curl statistics made simple
 long_description    ${name}: ${description}
 
-checksums           rmd160  c2b81c84a32721fa3570aa239bb3702fa928bee2 \
-                    sha256  b5daa9faba7072955d9f54b89d5fff53c155b87e8bca5538ca612f1152c3f764
+checksums           rmd160  1544cff4506d8983fa39343a2965051c83cda92e \
+                    sha256  ef1ee2deba42c71b235a04f49a6787383754233f55c012d8818d6dbf92225fa1
 
 python.versions     27 34
 

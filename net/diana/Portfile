@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        baskerville diana master
+github.setup        baskerville diana ccae0cae2e765a1174b0446c9c73c88e430d493f
 
 categories          sysutils
 platforms           darwin
@@ -14,8 +14,8 @@ description         A command line interface to the aria2 daemon
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  61c95996b85230034f8013235526cfc4864f056e \
-                    sha256  0cda3f08948b020f60b69d5d8469858ea43d2a1a70eed4e4a75ed051c2d44d70
+checksums           rmd160  89397afc9f254637cd20d7775ff5b85e0ad4d8ba \
+                    sha256  4e91b01758f200034250e2404762fb3ecc5412f0cbaab4363b818605434f431f
 use_configure       no
 
 build {}

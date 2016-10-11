@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        jeffkaufman icdiff master
+github.setup        jeffkaufman icdiff eb5a269f27370bddb16317e9eba6f0795705907b
 
 categories          textproc
 platforms           darwin
@@ -15,8 +15,8 @@ long_description    ${name}: ${description}
 homepage            http://www.jefftk.com/icdiff
 
 supported_archs     noarch
-checksums           rmd160  34a577fdefc243943565d63cf385ad2b13b1d5f6 \
-                    sha256  00a9059c74b813cea1f21140142972ca3259c811e3234d07462d4c2d9257ba16
+checksums           rmd160  e36fee2acb8b98826f9adf9a9d59b548c654aa7a \
+                    sha256  e0a222c7a497f7007802f2a7daa8532f43e2135445880a9eb3b2709a83f4eaa6
 use_configure       no
 
 build {}
