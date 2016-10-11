@@ -12,15 +12,15 @@ license             BSD 2-clause
 maintainers         gmail.com:justrafi
 description         Simple X hotkey daemon
 long_description    ${name}: \
-                    sxhkd is a simple X hotkey daemon with a powerful and compact configuration syntax.
-homepage            https://github.com/baskerville/sxhkd
+                    sxhkd is a simple X hotkey daemon with a powerful \
+                    and compact configuration syntax.
 
 checksums           rmd160  392d95652c3a9dc125a71e3b74a8aa9200b8a620 \
                     sha256  6bb285dcc389ac70f0ecf7df1b72778f029a5129a97e0fd40b9f5124ae143315
 
 depends_lib         port:xorg-xcb-util-keysyms
 
-use_configure           no
+use_configure       no
 
 build.env-append        PKG_CONFIG_PATH=$prefix/lib/pkgconfig \
                         CFLAGS="${configure.cflags} [get_canonical_archflags]" \

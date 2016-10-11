@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         bring your .bashrc, .vimrc, etc. with you when you ssh
 long_description    ${name}: ${description}
-homepage            https://github.com/Russell91/sshrc
 
 supported_archs     noarch
 checksums           rmd160  66ca4353a448f9b2a8f1f11d9668512502fec21b \

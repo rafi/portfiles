@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         Script to perform directory diffs using an external diff tool in Git
 long_description    ${name}: ${description}
-homepage            https://github.com/thenigan/git-diffall
 
 supported_archs     noarch
 checksums           rmd160  8cee07b48f930d57e52fde5206c530a905065453 \

@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         Dockerfile format and parser
 long_description    ${name}: ${description}
-homepage            https://github.com/${github.author}/${github.project}
 
 supported_archs     x86_64 i386
 checksums           rmd160  8fbb56bc0a67cfacbd610cc09aefaa20918bc3cc \

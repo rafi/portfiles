@@ -15,7 +15,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         Lemonade is a remote utility tool. (copy, paste and open browser) over TCP.
 long_description    ${name}: ${description}
-homepage            https://github.com/${github.author}/${github.project}
 
 supported_archs     x86_64 i386
 checksums           ${name}_${os.platform}_386.tar.gz \

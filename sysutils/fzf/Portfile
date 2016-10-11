@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         A command-line fuzzy finder
 long_description    ${name}: ${description}
-homepage            https://github.com/${github.author}/${github.project}
 
 supported_archs     noarch
 checksums           ${name}-${version}.tar.gz \

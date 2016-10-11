@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         v  uses  viminfo's list of recently edited files to open one quickly no matter where you are in the filesystem.
 long_description    ${name}: ${description}
-homepage            https://github.com/rupa/v
 
 supported_archs     noarch
 checksums           rmd160  2b8e6a0cb7adb5acf18961f1102306956355d488 \

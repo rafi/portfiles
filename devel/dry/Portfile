@@ -15,7 +15,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         A Docker container manager for the terminal
 long_description    ${name}: ${description}
-homepage            https://github.com/${github.author}/${github.project}
 
 supported_archs     x86_64 i386
 checksums           ${name}-${os.platform}-amd64 \

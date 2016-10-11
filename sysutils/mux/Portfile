@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         Manage a pool of Tmux project-files. Tiny little helper.
 long_description    ${name}: ${description}
-homepage            https://github.com/rafi/mux
 
 supported_archs     noarch
 checksums           rmd160  d08d2df0fdeff59138e9a7eb744454bb897a3726 \

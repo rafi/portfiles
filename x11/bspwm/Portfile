@@ -12,9 +12,9 @@ license             BSD 2-clause
 maintainers         gmail.com:justrafi
 description         A tiling window manager based on binary space partitioning
 long_description    ${name}: \
-                    bspwm is a tiling window manager that represents windows as the leaves of a full binary tree. \
-                    It is controlled and configured via bspc.
-homepage            https://github.com/baskerville/bspwm
+                    bspwm is a tiling window manager that represents windows \
+                    as the leaves of a full binary tree. It is controlled \
+                    and configured via bspc.
 
 checksums           rmd160  871374fe26d25b25a25ab0cc5b415f0c88af30a0 \
                     sha256  731cb386989396c26a075c6c9d749dda4e391f9edee1a4d0b4e71108b75bc43b
@@ -23,7 +23,7 @@ depends_lib         port:xorg-xcb-util \
                     port:xorg-xcb-util-wm \
                     port:xorg-libxcb
 
-use_configure           no
+use_configure       no
 
 build.env-append        PKG_CONFIG_PATH=$prefix/lib/pkgconfig \
                         CFLAGS="${configure.cflags} [get_canonical_archflags]" \

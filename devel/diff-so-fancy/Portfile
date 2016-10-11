@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         Good-lookin' diffs. Actually, nah. The best-lookin' diffs.
 long_description    ${name}: ${description}
-homepage            https://github.com/so-fancy/diff-so-fancy
 
 supported_archs     noarch
 checksums           rmd160  6b478f04511ed588968f19923d56c66d543bc4d4 \

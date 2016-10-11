@@ -12,7 +12,6 @@ license             MIT
 maintainers         gmail.com:justrafi
 description         A command line interface to the aria2 daemon
 long_description    ${name}: ${description}
-homepage            https://github.com/baskerville/diana
 
 supported_archs     noarch
 checksums           rmd160  61c95996b85230034f8013235526cfc4864f056e \
