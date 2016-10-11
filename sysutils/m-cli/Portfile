@@ -20,17 +20,26 @@ use_configure       no
 
 patchfiles          patch_opt_local.diff
 
+depends_run-append  path:etc/bash_completion:bash-completion
+
 build {}
 
 destroot {
-    xinstall -m 755 -d ${destroot}${prefix}/libexec/${name}
-    xinstall -m 755 -d ${destroot}${prefix}/libexec/${name}/plugins
+    xinstall -d -m 755 ${destroot}${prefix}/libexec/${name}
+    xinstall -d -m 755 ${destroot}${prefix}/libexec/${name}/plugins
 
+    # Documentation and license
     xinstall -m 755 -W ${worksrcpath} Readme.md LICENSE.md \
         ${destroot}${prefix}/libexec/${name}
 
+    # Executable and plugins
     xinstall -m 755 {*}[glob ${worksrcpath}/plugins/*] \
         ${destroot}${prefix}/libexec/${name}/plugins
 
     xinstall -m 775 ${worksrcpath}/m ${destroot}${prefix}/bin/m
+
+    # Bash completions
+    xinstall -d -m 755 ${destroot}${prefix}/etc/bash_completion.d
+    copy ${worksrcpath}/completion/bash/m \
+        ${destroot}${prefix}/etc/bash_completion.d/m
 }
