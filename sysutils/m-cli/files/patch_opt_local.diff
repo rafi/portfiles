@@ -1,38 +1,47 @@
---- lib/functions.sh
-+++ lib/functions.sh
-@@ -1,6 +1,6 @@
--#!/bin/sh
-+#!/usr/bin/env sh
- 
--. ${MPATH}/lib/colors.sh
-+source ${MPATH}/colors.sh
- 
- _green_msg(){
-     echo "${GREEN}$@${NC}"
-diff --git i/m w/m
-index fe903d6..1d486a8 100755
+diff --git m m
+index 63bb75c..3e35b8b 100755
 --- m
 +++ m
-@@ -1,25 +1,16 @@
--#!/bin/sh
-+#!/usr/bin/env sh
+@@ -1,74 +1,29 @@
+ #!/usr/bin/env bash
  
--pushd `dirname $0` > /dev/null
+-[ -L $0 ] && pushd `readlink $0 | xargs dirname` > /dev/null \
+-    || pushd `dirname $0` > /dev/null
 -export MPATH=`pwd -P`
 -popd > /dev/null
 +export MPATH="${M_CLI_PATH:-/opt/local/libexec/m-cli}"
  
--. ${MPATH}/lib/colors.sh
--. ${MPATH}/lib/functions.sh
+-
+-confirm () {
+-    read -r -p "${1:-Are you sure? [y/N]} " response
+-    case $response in
+-        [yY][eE][sS]|[yY])
+-            true
+-            ;;
+-        *)
+-            false
+-            ;;
+-    esac
+-}
+-
+-update_mcli(){
+-    INSTALL_DIR=${MPATH} ${MPATH}/install.sh
+-}
+-
+-uninstall_mcli(){
+-    confirm "Do you want to uninstall m-cli? [y/n]: " \
+-        && sudo rm -rf ${MPATH} 2>/dev/null \
+-        && sudo rm -f "/usr/local/bin/m" 2>/dev/null \
+-        && echo "Done !"
+-}
 -
 -
 -usage(){
-+source ${MPATH}/functions.sh
- 
 +usage() {
+ 
      cat <<__EOF__
  
-   Swiss Army Knife for Mac OS X ! 
+   Swiss Army Knife for macOS ! 
  
  
 -usage:  m [OPTIONS] COMMAND [help]
@@ -44,31 +53,33 @@ index fe903d6..1d486a8 100755
  
      COMMANDS:
          help
-@@ -31,27 +22,9 @@ __EOF__
+ __EOF__
+ 
+-    for i in ${MPATH}/plugins/*; do
++    for i in "${MPATH}/plugins/"*; do
+         [ ! -L "$i" -a -f "$i"  ] && echo "        ${i##*/}"
+     done
      exit 1
  }
  
+-
 -case $1 in
 -    --update)
--        ${MPATH}/install.sh
--        exit 0
+-        update_mcli && exit 0
 -        ;;
 -    --uninstall)
--        confirm "Do you want to uninstall m-cli? [y/n]: " \
--            && sudo rm -rf ${MPATH} 2>/dev/null \
--            && sudo rm -f "/etc/paths.d/m-cli" 2>/dev/null \
--            && echo "Done !"
--        exit 0
+-        uninstall_mcli && exit 0
 -        ;;
 -esac
 -
 -
  COMMAND=$1; shift;
  
- [ ! -f ${MPATH}/plugins/${COMMAND} ] && usage
- ${MPATH}/plugins/${COMMAND} $@
+-[ ! -f ${MPATH}/plugins/${COMMAND} ] && usage
+-${MPATH}/plugins/${COMMAND} "$@"
+-
+-
++[ ! -f "${MPATH}/plugins/${COMMAND}" ] && usage
++"${MPATH}/plugins/${COMMAND}" "$@"
  
--
--
- # vim: set ts=4 sw=4 softtabstop=4 expandtab
--
+ # vim: ts=4 sw=4 softtabstop=4 expandtab

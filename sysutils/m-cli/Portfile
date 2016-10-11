@@ -3,20 +3,19 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        rgcr m-cli master
+github.setup        rgcr m-cli 0.1.9 v
 
+name                m-cli
 categories          sysutils
 platforms           darwin
-license             MIT
 
 maintainers         gmail.com:justrafi
 description         Swiss Army Knife for Mac OS X
 long_description    ${name}: ${description}
-homepage            https://github.com/rgcr/m-cli
 
 supported_archs     noarch
-checksums           rmd160  ae6475de0f99ef3182a41287df9092118a99487d \
-                    sha256  82f714ee9850ab6c697121a3b9806fbe94b84c4fed6de54f1d3dc82bfbbe84cd
+checksums           rmd160  1e5ab72fe95fb637637b5533a428738a20bc2032 \
+                    sha256  7f8eb085604f53106063ba611758bf3b30739dd6f787885818c0cff7fc7bae3c
 use_configure       no
 
 patchfiles          patch_opt_local.diff
@@ -26,13 +25,12 @@ build {}
 destroot {
     xinstall -m 755 -d ${destroot}${prefix}/libexec/${name}
     xinstall -m 755 -d ${destroot}${prefix}/libexec/${name}/plugins
-    xinstall -m 644 -W ${worksrcpath}/lib colors.sh \
-        functions.sh ${destroot}${prefix}/libexec/${name}
-    xinstall -m 755 -W ${worksrcpath}/plugins \
-        battery dir finder gatekeeper info network \
-        ntp safeboot service sleep trash volume \
-        wifi bluetooth disk firewall hostname lock nosleep \
-        restart screensaver shutdown timezone user wallpaper \
+
+    xinstall -m 755 -W ${worksrcpath} Readme.md LICENSE.md \
+        ${destroot}${prefix}/libexec/${name}
+
+    xinstall -m 755 {*}[glob ${worksrcpath}/plugins/*] \
         ${destroot}${prefix}/libexec/${name}/plugins
+
     xinstall -m 775 ${worksrcpath}/m ${destroot}${prefix}/bin/m
 }
