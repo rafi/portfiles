@@ -40,7 +40,3 @@ build {}
 destroot {
     xinstall -m 0755 ${workpath}/${distname} ${destroot}${prefix}/bin/${name}
 }
-
-livecheck.type      regex
-livecheck.url       ${homepage}/releases
-livecheck.regex     /${github.author}/${github.project}/releases/tag/${github.tag_prefix}(${github.version})
