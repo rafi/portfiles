@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        cortex gopass ce000de014f3b7fe2edcf7571980043c68d95609
 
+version             20160928
 categories          devel
 platforms           darwin
 license             MIT
@@ -14,7 +15,7 @@ description         Gopass: A simple password-store GUI
 long_description    ${name}: ${description}
 
 supported_archs     x86_64 i386
-checksums           ${name}-${version}.tar.gz \
+checksums           ${name}-${git.branch}.tar.gz \
                     rmd160  634c07fda95c73a29cfd12e501c9e8d7929b8b75 \
                     sha256  ea7c229476cd7f06b67527c0da6998b618289d640b56555e557f167cd53721ce
 
@@ -110,5 +111,5 @@ build.env       GOPATH="${gopath}" \
 
 destroot {
     xinstall -d ${destroot}${prefix}/bin
-    xinstall -m 755 ${worksrcpath}/${name}-${version} ${destroot}${prefix}/bin/${name}
+    xinstall -m 755 ${worksrcpath}/${name}-${git.branch} ${destroot}${prefix}/bin/${name}
 }

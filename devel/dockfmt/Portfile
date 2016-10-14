@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        jessfraz dockfmt 38382d87037e5a59b0a8e218bb6d162ed96522db
 
+version             20161008
 categories          devel
 platforms           darwin
 license             MIT

@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        rupa z 1a361f6dc10e54e34e42f1e03850692959c6b413
 
+version             20160720
 categories          sysutils
 platforms           darwin
 license             MIT

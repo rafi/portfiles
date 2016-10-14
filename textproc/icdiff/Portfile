@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        jeffkaufman icdiff eb5a269f27370bddb16317e9eba6f0795705907b
 
+version             20160928
 categories          textproc
 platforms           darwin
 license             MIT

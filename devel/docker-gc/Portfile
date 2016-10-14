@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        spotify docker-gc 4ee60137cfc76cf568b47f9b459b851d59325311
 
+version             20160824
 categories          devel
 platforms           darwin
 license             MIT

@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        Russell91 sshrc 8d378138d686f91266e5bf8a489dd5c7985359db
 
+version             20160809
 categories          sysutils net
 platforms           darwin
 license             MIT

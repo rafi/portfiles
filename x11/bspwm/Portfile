@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        baskerville bspwm 8664c007e44de162c1597fd7e163635b274fb747
 
+version             20161011
 categories          x11 x11-wm
 platforms           darwin
 license             BSD 2-clause

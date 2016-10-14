@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        baskerville diana ccae0cae2e765a1174b0446c9c73c88e430d493f
 
+version             20160225
 categories          sysutils
 platforms           darwin
 license             MIT

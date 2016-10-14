@@ -5,6 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 github.setup        itchyny cam 8b81199e358ec90b0ae0457492074d76ee7f4e8a
 
+version             20141220
 categories          x11
 platforms           darwin
 license             BSD 2-clause
