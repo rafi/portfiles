@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        Xfennec progress 0.13 v
+github.setup        Xfennec progress 0.13.1 v
 
 categories          devel
 platforms           darwin
@@ -15,8 +15,8 @@ description         Linux tool to show progress for cp, mv, dd, ...
 long_description    ${name}: ${description} (formerly known as cv)
 
 supported_archs     noarch
-checksums           rmd160  7b17a53dd02be1b7b723e1dade323676baa26e2b \
-                    sha256  e7067fb5b8b04a01ec5c22c284c4fb4832b45da1b1cb31011e3ba5ce76adfbaa
+checksums           rmd160  05ef427916bc56555f2b8e2fff594658dfb2c319 \
+                    sha256  d45736540d1385fa71bfd7add84600aa174cc93e7ad91f500a2bd22f5ec77686
 use_configure       no
 
 build.target          install
