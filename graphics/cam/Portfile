@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        itchyny cam 8b81199e358ec90b0ae0457492074d76ee7f4e8a
+
+categories          x11
+platforms           darwin
+license             BSD 2-clause
+
+maintainers         gmail.com:justrafi
+description         unix command cam: view images inside termin
+long_description    ${name}: ${description}
+
+checksums           rmd160  975b647932fd805b1003abd255bbeab4c1962a6c \
+                    sha256  f3e876edd324d00fabaa677301ed0e09e17903b446f2bae67f0de699800f5131
+
+use_autoreconf      yes
+autoreconf.args     -fvi
+
+configure.args-append   --prefix=${prefix} --mandir=${prefix}/share/man
+
+configure.env-append    CFLAGS="${configure.cflags} [get_canonical_archflags]" \
+                        LDFLAGS="${configure.ldflags} [get_canonical_archflags]"
+
+build.env-append        PKG_CONFIG_PATH=$prefix/lib/pkgconfig \
+                        CFLAGS="${configure.cflags} [get_canonical_archflags]" \
+                        LDFLAGS="${configure.ldflags} [get_canonical_archflags]"
+
+build.args-append       CC=${configure.cc} \
+                        LD=${configure.cc}
+
+destroot.args-append    PREFIX=${prefix} \
+                        SYSCONFDIR=${prefix}/etc/

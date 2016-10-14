@@ -1,0 +1,24 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           cmake 1.0
+PortGroup           github 1.0
+
+github.setup        sahib glyr 1.0.9
+categories          audio
+platforms           darwin
+license             GPL-3.0
+
+maintainers         gmail.com:justrafi
+description         music related metadata searchengine
+long_description    ${name}: ${description}, \
+                    both with commandline interface and C API
+
+checksums           rmd160  f8067a0b11b0c017ccc9f02eb8e27faa0d367e4f \
+                    sha256  aa2003926679c83a2428e65249968aecb96e71d51f5934106e8944c08d7b913c
+
+configure.args-append   -DCMAKE_INSTALL_PREFIX="/opt/local" \
+                        -DCMAKE_BUILD_TYPE="release" \
+                        -DCMAKE_EXE_LINKER_FLAGS="-L/opt/local/lib" \
+                        -DCMAKE_SHARED_LINKER_FLAGS="-L/opt/local/lib"
