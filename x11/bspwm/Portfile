@@ -22,6 +22,7 @@ checksums           rmd160  71d9dc45b2916eae1ea128109af126c0343b53d1 \
 
 depends_lib         port:xorg-xcb-util \
                     port:xorg-xcb-util-wm \
+                    port:xorg-xcb-util-keysyms \
                     port:xorg-libxcb
 
 use_configure       no
