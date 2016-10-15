@@ -1,0 +1,22 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           cmake 1.0
+PortGroup           github 1.0
+
+github.setup        tsl0922 ttyd 1.1.0
+categories          net
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Command-line tool for sharing terminal over the web
+long_description    ${name}: ${description}
+
+checksums           rmd160  6b8053fb188c0471eec3cd59db1df7965eaa5694 \
+                    sha256  a6199932c9b35ae25fd1e9e15ff6ab70e0f45360914e600dfad24340230f4ba0
+
+depends_lib         port:openssl \
+                    port:json-c \
+                    port:libwebsockets

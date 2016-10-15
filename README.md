@@ -23,7 +23,8 @@ The ports included are:
 │   ├── docker-gc
 │   ├── dockfmt
 │   ├── dry
-│   └── git-diffall
+│   ├── git-diffall
+│   └── libwebsockets
 ├── editors
 │   └── v
 ├── graphics
@@ -34,7 +35,8 @@ The ports included are:
 │   ├── httpstat
 │   ├── qsyncthingtray
 │   ├── sshrc
-│   └── telegram-cli
+│   ├── telegram-cli
+│   └── ttyd
 ├── security
 │   └── gopass
 ├── sysutils
