@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        rafi mux master
+github.setup        rafi mux 1.0
 
 categories          sysutils
 platforms           darwin

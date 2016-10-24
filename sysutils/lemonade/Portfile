@@ -4,7 +4,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        pocke lemonade 1.1.0 v
+github.setup        pocke lemonade 1.1.1 v
 github.tarball_from releases
 extract.suffix
 
