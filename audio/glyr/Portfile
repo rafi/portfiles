@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 PortGroup           github 1.0
 
-github.setup        sahib glyr 1.0.9
+github.setup        sahib glyr 1.0.10
 categories          audio
 platforms           darwin
 license             GPL-3.0
@@ -15,8 +15,8 @@ description         music related metadata searchengine
 long_description    ${name}: ${description}, \
                     both with commandline interface and C API
 
-checksums           rmd160  f8067a0b11b0c017ccc9f02eb8e27faa0d367e4f \
-                    sha256  aa2003926679c83a2428e65249968aecb96e71d51f5934106e8944c08d7b913c
+checksums           rmd160  078fc2f485ca885306d7a9c983aa134f0d7ef1a8 \
+                    sha256  bf4d7830964e157ccb2de2f27abbb7f48a1cbfd4d23c53bbbb7cd88d9a24809c
 
 configure.args-append   -DCMAKE_INSTALL_PREFIX="/opt/local" \
                         -DCMAKE_BUILD_TYPE="release" \

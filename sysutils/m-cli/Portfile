@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        rgcr m-cli 0.1.9 v
+github.setup        rgcr m-cli 0.2.0 v
 
 name                m-cli
 categories          sysutils
@@ -14,8 +14,8 @@ description         Swiss Army Knife for Mac OS X
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  1e5ab72fe95fb637637b5533a428738a20bc2032 \
-                    sha256  7f8eb085604f53106063ba611758bf3b30739dd6f787885818c0cff7fc7bae3c
+checksums           rmd160  0eedb248269ffa063998f9a1fada39eac22fb629 \
+                    sha256  1b3551296bfd7b5954e7b4e736f0354ce95df433dc3f8dbd0b4fab43db392852
 use_configure       no
 
 patchfiles          patch_opt_local.diff

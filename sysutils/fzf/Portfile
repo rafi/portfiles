@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        junegunn fzf 0.15.5
+github.setup        junegunn fzf 0.15.7
 
 categories          devel
 platforms           darwin
@@ -15,8 +15,8 @@ long_description    ${name}: ${description}
 
 supported_archs     noarch
 checksums           ${name}-${version}.tar.gz \
-                    rmd160  a2795fbb32db3a8e7b77baea02b99bfd75e3870f \
-                    sha256  3f09b146a2818e071eb4162c4c496981f3f5281494d34789953375412f2100a9
+                    rmd160  327725e84ac7b0982bab40d276a87fb51781ad5a \
+                    sha256  3fb4e9ad1e741ac72f5187e0669807446e0cc47ad735c373877a2056bbd374d9
 
 depends_build   port:go
 use_configure   no
