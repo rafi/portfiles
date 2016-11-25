@@ -3,9 +3,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        baskerville bspwm b14ec6456512c8869c40033472a45e051e27fc03
+github.setup        baskerville bspwm 5299a283432806ee8c79368831a44b5b6cbabbee
 
-version             20161112
+version             20161123
 categories          x11 x11-wm
 platforms           darwin
 license             BSD 2-clause
@@ -17,8 +17,8 @@ long_description    ${name}: \
                     as the leaves of a full binary tree. It is controlled \
                     and configured via bspc.
 
-checksums           rmd160  7e14107effb4c0cafc75314d365c4f3602b781f2 \
-                    sha256  5d1e16e0281eeb61987c48754fabd1887d2fced8a2c325e901da2c170e423c52
+checksums           rmd160  054160328de3e093262376c05576e146fb1c53be \
+                    sha256  b73bea071c77e687df2eded5e1352f61657e30dbb3be60a58943a008b406f28f
 
 depends_lib         port:xorg-xcb-util \
                     port:xorg-xcb-util-wm \
