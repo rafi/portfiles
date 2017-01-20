@@ -1,0 +1,66 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        koekeishiya kwm 4.0.4 v
+github.tarball_from releases
+
+categories          aqua
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Tiling window manager with focus follows mouse for OSX
+long_description    ${name}: ${description}
+
+checksums           rmd160  6f3968d7871bb41908616a6a6cdf37ee50d50705 \
+                    sha256  399729aa4806b09daabc62a7e2eed7605d26c189ccbb911c123ef045db96e921
+
+supported_archs     x86_64
+use_configure       no
+use_zip             yes
+
+extract.suffix      .zip
+extract.mkdir       yes
+build               {}
+
+set plist-name  com.koekeishiya.kwm.plist
+
+post-extract {
+    file copy -force ${filespath}/${plist-name} ${worksrcpath}
+    reinplace "s|{PREFIX}|${prefix}|g" ${worksrcpath}/${plist-name}
+}
+
+destroot {
+    xinstall -m 555 ${worksrcpath}/kwm ${destroot}${prefix}/libexec
+    xinstall -m 555 ${worksrcpath}/kwmc ${destroot}${prefix}/libexec
+    xinstall -m 755 ${worksrcpath}/overlaylib.dylib ${destroot}${prefix}/libexec
+
+    xinstall -d -m 755 ${destroot}${prefix}/share/${name}
+    xinstall -m 644 -W ${worksrcpath}/ kwmrc ${plist-name} \
+        ${destroot}${prefix}/share/${name}
+}
+
+post-destroot {
+    ln -s ${prefix}/libexec/kwm ${destroot}${prefix}/bin/kwm
+    ln -s ${prefix}/libexec/kwmc ${destroot}${prefix}/bin/kwmc
+}
+
+notes "******************************************************
+To start using Kwm, follow these instructions:
+
+  1) Copy the example config from ${prefix}/share/${name}/kwmrc
+     into your home directory:
+
+    mkdir -p ~/.kwm
+    cp ${prefix}/share/${name}/kwmrc ~/.kwm/kwmrc
+
+  2) Symlink prepared agent and start it:
+
+    cd ~/Library/LaunchAgents
+    ln -s ${prefix}/share/${name}/${plist-name}
+    launchctl load -w ~/Library/LaunchAgents/${plist-name}
+
+******************************************************"
