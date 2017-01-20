@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        docker docker 1.13.0-rc2 v
+github.setup        docker docker 1.13.0-rc7 v
 
 name                docker-bash-completion
 categories          devel
@@ -15,8 +15,8 @@ description         bash completion file for core docker commands
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  bffeb5cdb58d7960ec10b9da97fab864d462e72c \
-                    sha256  b522b24962249d9c915e6b59e04bd81c0cf966b68e209182134d01c39d27b8f7
+checksums           rmd160  36635c51090787a14cdf53b1bb110458a6a9a6a2 \
+                    sha256  d53ca2db34d2443b3b684adb691afb531a32573531c2e9475e4de1f4895732a3
 
 use_configure       no
 

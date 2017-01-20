@@ -3,9 +3,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        baskerville sxhkd 74e5454f0c45db4cdcce6c98f9ce95a6f4e9f1da
+github.setup        baskerville sxhkd 8211d20326874dd96303bd331c58ba3ad4d6e54d
 
-version             20161030
+version             20170113
 categories          x11
 platforms           darwin
 license             BSD 2-clause
@@ -16,8 +16,8 @@ long_description    ${name}: \
                     sxhkd is a simple X hotkey daemon with a powerful \
                     and compact configuration syntax.
 
-checksums           rmd160  27c8013e4a57f1309f644f7b9c15a50351e14946 \
-                    sha256  8e4eb43ebd659b154b97febe0f34102a6040c6be278ddb4de1ed11307068b2cf
+checksums           rmd160  9e773c5168568680b4d80d80307780bc4265e4bb \
+                    sha256  3614c09610c2d7d7d2de2ecd33512a75857d6ead4c98347bfc956014e218d105
 
 depends_lib         port:xorg-xcb-util-keysyms
 

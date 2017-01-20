@@ -4,7 +4,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        moncho dry 0.6-alpha.2 v
+github.setup        moncho dry 0.6-alpha.5 v
 github.tarball_from releases
 extract.suffix
 
