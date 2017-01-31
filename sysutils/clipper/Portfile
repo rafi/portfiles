@@ -1,0 +1,53 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        wincent clipper 0.4.1
+
+categories          sysutils
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Clipboard access for local and remote tmux sessions
+long_description    ${name}: ${description}
+
+supported_archs     noarch
+checksums           rmd160  4cc0bee974bde5ab155318b1a04f691b25ddeb44 \
+                    sha256  a472540371ea76c8b91b70322819053b2ad89d3b77baed780c0468b6ea20e2e0
+
+depends_build   port:go
+use_configure   no
+
+build.target    build
+build.env       GOPATH="${workpath}"
+
+destroot {
+    xinstall -d ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/${name} ${destroot}${prefix}/bin/${name}
+
+    xinstall -d -m 755 ${destroot}${prefix}/share/${name}
+    xinstall -d -m 755 ${destroot}${prefix}/share/${name}/tcp-port
+    xinstall -d -m 755 ${destroot}${prefix}/share/${name}/domain-socket
+    xinstall -m 644 ${worksrcpath}/contrib/darwin/tcp-port/com.wincent.clipper.plist \
+        ${destroot}${prefix}/share/${name}/tcp-port
+    xinstall -m 644 ${worksrcpath}/contrib/darwin/domain-socket/com.wincent.clipper.plist \
+        ${destroot}${prefix}/share/${name}/domain-socket
+}
+
+notes "******************************************************
+To start using Clipper, follow these instructions:
+
+  1) You can choose to bind to an IP address or
+    a Unix socket.
+
+  2) Symlink prepared launch-agent and start it:
+
+    cd ~/Library/LaunchAgents
+    ln -s ${prefix}/share/${name}/tcp-port/com.wincent.clipper.plist
+    launchctl load -w ~/Library/LaunchAgents/com.wincent.clipper.plist
+
+  3) Read guide at https://github.com/wincent/clipper
+
+******************************************************"
