@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        docker docker 1.13.0-rc7 v
+github.setup        docker docker 1.13.0 v
 
 name                docker-bash-completion
 categories          devel

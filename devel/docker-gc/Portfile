@@ -3,9 +3,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        spotify docker-gc 872491df181f0525093c40c6e1d9027a71254378
+github.setup        spotify docker-gc f460c1d2d50b652e156ffe68489362bedc9278a5
 
-version             20170117
+version             20170125
 categories          devel
 platforms           darwin
 license             MIT
@@ -15,8 +15,8 @@ description         Docker garbage collection of containers and images
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  5f9ce3c9965614dab373a7e2810beb9428b39873 \
-                    sha256  27e69a7c6d3de36a333952c70441d83eeadc15b08f32ace199844778e03c72c3
+checksums           rmd160  ce68387c8d91fd53666919dc263c73e8ca30f0c1 \
+                    sha256  2fcbe6b67d4454d1c6c4592201e1b4efc3badcc1d5a97ec1718d087f1faace48
 use_configure       no
 
 build {}
