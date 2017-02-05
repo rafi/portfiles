@@ -55,8 +55,7 @@ proc go.vendors-append {args} {
     }
 }
 
-# dependencies to build. remember revbump when you change version of dependencies.
-# https://github.com/peco/peco/blob/master/glide.lock
+# dependencies to build.
 go.vendors-append   golang.org/x/crypto           8e06e8ddd9629eb88639aba897641bff8031f1d3 \
                     github.com/atotto/clipboard   bb272b845f1112e10117e3e45ce39f690c0001ad \
                     github.com/cortex/gpgme       531a4c667ce62da7e8ce9922476a7be8423b1afb \

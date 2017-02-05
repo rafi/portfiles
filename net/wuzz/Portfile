@@ -1,0 +1,99 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        asciimoo wuzz b3ef8300e147aecb6dd8a4e3654417eb4f3fb096
+
+version             20170204
+categories          net
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Interactive cli tool for HTTP inspection
+long_description    Wuzz command line arguments are similar to cURL's \
+                    arguments, so it can be used to inspect/modify requests \
+                    copied from the browser's network inspector with \
+                    the "copy as cURL" feature.
+
+supported_archs     noarch
+checksums           ${name}-${git.branch}.tar.gz \
+                    rmd160  b83ef985b7cbb0c9a8f60f1964765dbb10981ff0 \
+                    sha256  01c2aa17d54b31b116e0506c315d5efaec171dde4cdd6f3279e5eadd9ee91333
+
+depends_build   port:go
+use_configure   no
+
+# Utility for go-vendoring codes
+set go.vendors {}
+
+# go.vendors-append name1 ver1 name2 ver2...
+proc go.vendors-append {args} {
+    global go.vendors
+
+    foreach {imp_name vers} ${args} {
+        set vlist [split ${imp_name} /]
+
+        set vdomain [lindex ${vlist} 0]
+        set vuser [lindex ${vlist} 1]
+        set vname [lindex ${vlist} 2]
+
+        # NOTE: now expects github.com or golang.org
+        switch -exact ${vdomain} {
+            github.com { set ghuser ${vuser} }
+            golang.org { set ghuser golang }
+        }
+
+        set fname ${ghuser}-${vname}
+        lappend go.vendors [list ${fname} ${imp_name} ${vers}]
+
+        global ${vname}.version
+        set ${vname}.version ${vers}
+
+        master_sites-append https://github.com/${ghuser}/${vname}/tarball/${vers}:${fname}
+        distfiles-append    ${fname}-${vers}.tar.gz:${fname}
+    }
+}
+
+# dependencies to build.
+go.vendors-append  github.com/jroimartin/gocui  7ac95c981b8a07b624ab197b3ad5813fdfbe4864 \
+                   github.com/nsf/termbox-go    abe82ce5fb7a42fbd6784a5ceb71aff977e09ed8 \
+                   github.com/mattn/go-runewidth  14207d285c6c197daabb5c9793d63e7af9ab2d50
+
+checksums-append    jroimartin-gocui-${gocui.version}.tar.gz \
+                        md5     c73ce3d239d10f0471e3bd351a5c6f35 \
+                        sha1    27ff62687c8247f025634441f2ffd2a0eb14aa47 \
+                        sha256  c33d8831b29cd82d7430bfa0b3a94bc881df18b9d511a95e0ccf9794cbc3fa68 \
+                        rmd160  91830335d5175a4a3254a1c16777eb6c93fed5e8 \
+                    nsf-termbox-go-${termbox-go.version}.tar.gz \
+                        rmd160  ed22b8153d9744c07e6fe0afafef24910f4ce912 \
+                        sha256  7c969eba5903c7778d6c804c82395e0de9549f2991271f690e8afc77cb5ebde8 \
+                    mattn-go-runewidth-${go-runewidth.version}.tar.gz \
+                        rmd160  38f344bca8cdd209a3d80a079b4c0c123ac34012 \
+                        sha256  74e7a92bf6620c2acfee5594d60b93d0496611e79fbdf822f95c1b8d0228eab8
+
+set gopath      ${workpath}/wuzz
+set gosrc       ${gopath}/src
+set package_dir github.com/asciimoo/wuzz
+
+post-extract {
+    file mkdir ${gosrc}/github.com/${github.author}
+    ln -s ${worksrcpath} ${gosrc}/github.com/${github.author}/${github.project}
+    foreach vlist ${go.vendors} {
+        set fname [lindex ${vlist} 0]
+        set imp_name [lindex ${vlist} 1]
+        file mkdir ${gosrc}/[file dirname ${imp_name}]
+        move [glob ${workpath}/${fname}-*] ${gosrc}/${imp_name}
+    }
+}
+
+build.cmd       go
+build.target    build
+build.args
+build.env       GOPATH="${gopath}"
+
+destroot {
+    xinstall -d ${destroot}${prefix}/bin
+    xinstall -m 755 ${worksrcpath}/${name}-${git.branch} ${destroot}${prefix}/bin/${name}
+}
