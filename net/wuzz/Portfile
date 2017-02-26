@@ -3,9 +3,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        asciimoo wuzz 0c6ade021686f889783827d7da31a25f8f977a17
+github.setup        asciimoo wuzz 711176ab446817632e7f6f07615898e310233db2
 
-version             20170213
+version             20170225
 categories          net
 platforms           darwin
 license             MIT
@@ -19,8 +19,8 @@ long_description    Wuzz command line arguments are similar to cURL's \
 
 supported_archs     noarch
 checksums           ${name}-${git.branch}.tar.gz \
-                    rmd160  699bed67a359102ad43bd5660000eb2355e21cca \
-                    sha256  8024bde9ffe07cce81b96a633788f57e1f384fabf0ffb9bb57449aa3784b6fb8
+                    rmd160  bd6865640e1a6e81a532df1333b4ea5bfe24da0f \
+                    sha256  d8876c4fecd2c485bba2bd9f46730b7518fbfe7ee9fe72aacd6ef80becb8df50
 
 depends_build   port:go
 use_configure   no

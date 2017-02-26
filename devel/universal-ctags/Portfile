@@ -3,10 +3,10 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        universal-ctags ctags 9d8e78e579d7c59e7d00cee9306d90c88ef3b4ae
+github.setup        universal-ctags ctags a39f842455fdcc47b812c35c6bf0f19735034de0
 
 name                universal-ctags
-version             20170207
+version             20170224
 categories          devel
 platforms           darwin freebsd
 license             GPL-2
@@ -29,9 +29,9 @@ long_description \
     Shell, C, C++, COBOL, Eiffel, Fortran, Java, Lisp, Lua, Make, Pascal, Perl, \
     PHP, Python, REXX, Ruby, S-Lang, Scheme, Tcl, Vim and Yacc.
 
-checksums           sha1    9bea2e5e1d9880c350bd5bc334569d435dad4809 \
-                    rmd160  8068267e544a7c5b1092ef05d871861bb2b89813 \
-                    sha256  94ae5cbccae7d02a9d975316377d8ab42479b06278546c805aae99181b790624
+checksums           sha1    6bb7ba77622811182866e54e9f6bcbc3ae52f72e \
+                    rmd160  9b1a73d8cd743c5ef45de404e5c287d151cb16b4 \
+                    sha256  a36484b24115a01b38d03d044f449b2f19f2e4b5fb5d488f40385b17a241f239
 
 configure.args   --enable-macro-patterns \
                  --mandir=\\\${prefix}/share/man \
