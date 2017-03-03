@@ -1,0 +1,43 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        sunaku dasht 1f5b49615c929cceda135e489480f7e53836be2b
+
+version             20170211
+categories          devel
+platforms           darwin
+license             ISC
+
+maintainers         gmail.com:justrafi
+description         Search API docs offline, in terminal or browser
+long_description    dasht is a collection of shell scripts for searching, \
+                    browsing, and managing API documentation (in the form of \
+                    150+ offline documentation sets, courtesy of Dash for \
+                    OS X) all from the comfort of your own terminal!
+
+supported_archs     noarch
+checksums           rmd160  02fc5b5c3c5b81170ab8e05279d729ba7c964527 \
+                    sha256  3a6a87ec2df15ff0383945c5b0ee4a735789619bcbd1e079c262a24347db9877
+
+depends_lib-append  port:sqlite3 \
+                    port:wget \
+                    port:w3m \
+                    port:socat
+
+use_configure   no
+
+build {}
+
+destroot {
+    xinstall -m 755 -d ${destroot}${prefix}/share/doc/${name}
+
+    xinstall -m 644 -W ${worksrcpath}/ README.md VERSION.md LICENSE \
+        ${destroot}${prefix}/share/doc/${name}
+
+    xinstall -m 755 {*}[glob ${worksrcpath}/man/man1/*] \
+        ${destroot}${prefix}/share/man/man1
+
+    xinstall -m 755 {*}[glob ${worksrcpath}/bin/*] ${destroot}${prefix}/bin
+}
