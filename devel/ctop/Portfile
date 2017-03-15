@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        bcicen ctop 0.5 v
+github.tarball_from releases
+
+categories          devel
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         Top-like interface for container metrics
+long_description    ctop provides a concise and condensed overview of \
+                    real-time metrics for multiple containers as well \
+                    as an expanded view for inspecting a specific container.
+
+checksums           rmd160  0a50dff7da4012834556d71602df6c57207efa4e \
+                    sha256  6e3ad350bc23c19861769ac906a3df2becbc0617b2f9f4ed2330e327d0ede0ba
+
+supported_archs     x86_64
+extract.suffix      -${os.platform}-amd64
+extract.mkdir       yes
+use_configure       no
+
+extract {
+    file copy ${distpath}/${distname}${extract.suffix} ${worksrcpath}/${name}
+}
+
+build    {}
+
+destroot {
+    xinstall -m 0755 ${worksrcpath}/${name} ${destroot}${prefix}/bin/${name}
+}
