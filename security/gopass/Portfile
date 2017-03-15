@@ -3,9 +3,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        cortex gopass 467281b05d3f5af1a74a90b77d9d22819b57ee11
+github.setup        cortex gopass 5ef3ce344c6dfe3a9f387afe1600f984d2497247
 
-version             20161118
+version             20170302
 categories          devel
 platforms           darwin
 license             MIT
@@ -16,8 +16,8 @@ long_description    ${name}: ${description}
 
 supported_archs     x86_64 i386
 checksums           ${name}-${git.branch}.tar.gz \
-                    rmd160  b731138172f6641bea7eba64cb21b9c25957623a \
-                    sha256  c6599b360390d58e4fe8bc8c50921bb0905e6b4a57505025dd79c393a28e1ae0
+                    rmd160  9ac521fa95b918e8694454a99bcf0e77e6c22068 \
+                    sha256  8490e7cab92b06e5e2c4486359ac6d9bba487c3bb94f0222f984d078b9daa45e
 
 depends_lib     port:qt5 port:gpgme port:qt5-qtquickcontrols
 depends_build   port:go
@@ -56,33 +56,33 @@ proc go.vendors-append {args} {
 }
 
 # dependencies to build.
-go.vendors-append   golang.org/x/crypto           8e06e8ddd9629eb88639aba897641bff8031f1d3 \
+go.vendors-append   golang.org/x/crypto           728b753d0135da6801d45a38e6f43ff55779c5c2 \
                     github.com/atotto/clipboard   bb272b845f1112e10117e3e45ce39f690c0001ad \
-                    github.com/cortex/gpgme       531a4c667ce62da7e8ce9922476a7be8423b1afb \
-                    github.com/rjeczalik/notify   7e20c15e6693a7d6ad269a94b70ed68bc4a875a7 \
-                    github.com/limetext/qml-go    6baf9961e8871636c6e21b43798861a5eb27fc4e
+                    github.com/cortex/gpgme       8adc29782c63580d1733b463abe4a20405e80d3f \
+                    github.com/rjeczalik/notify   41a86457b5eea072a7e6f40bbfaf94c8df41d3aa \
+                    github.com/limetext/qml-go    e895a291f2aa9d05ba936cab85534827b2f17144
 
 
 checksums-append    golang-crypto-${crypto.version}.tar.gz \
-                        md5     31c5de162b8f17f13ee6eb5b3d0ddf8b \
-                        sha1    ec13168bdc0893c1b091c4b5ea76174fa8f34914 \
-                        sha256  b7df62ddc8259a2ba688a24322cfc8474e64f791db52bf6f5afee911f9a001ab \
+                        md5     a518ef106e99e1b6a9027ea929e0a829 \
+                        sha1    3ced48bae2fb261e7e4e8b0b67f173b9806bb898 \
+                        sha256  12d41b541ca9ef48e468a26f9b9564f8c244341068a535a4b03313ef197566f4 \
                     atotto-clipboard-${clipboard.version}.tar.gz \
                         md5     b9e7279d679be18e3a57a78050fd6394 \
                         sha1    8b98cf18e86dd2b3dbe56856b1752ce6ca04b448 \
                         sha256  a481dc4dd08a3b3e51743a7f217e3e0b382b8b1a20b72dcf3a92b10b145ad31a \
                     cortex-gpgme-${gpgme.version}.tar.gz \
-                        md5     206f161a029f46c6420726787e419e1d \
-                        sha1    3d813a7bded0546a3a574c0c475bd2a5d52258ce \
-                        sha256  a5930ae2076ed8377c75bb64d0f42fbcfab24d66227f6bd5beafaaa55626cd9d \
+                        md5     d993bf5c859f026eb431bf7ce3621e04 \
+                        sha1    d7c730289293655c5d692daf4785da3c053ab477 \
+                        sha256  61a36845545221d8ca07674da06a5db57f00219ebeadd5747f79d264a43679df \
                     rjeczalik-notify-${notify.version}.tar.gz \
-                        md5     58f90642214740991ef6c6155597bd90 \
-                        sha1    dea3c392c9a464a42ffe82f8a14ec0c36001a1a1 \
-                        sha256  5ccc58b20234969b53c9a5b5236ca4c1fb60dab1e087ebd632470b21cd4d3a10 \
+                        md5     a7110398d7e84b0a043dce8ecc76db2d \
+                        sha1    5616a26cac34f260e62e3f7659b5bec8525290a4 \
+                        sha256  f275db385675c5108d626cb8ce4c8fc9ff7b808d56fad4b0a6a9f42f4b27dfcb \
                     limetext-qml-go-${qml-go.version}.tar.gz \
-                        md5     5003a5711e7ac5003fa218abc30a8554 \
-                        sha1    a369b6b11ca7a6a4533b3f3d1c615868394f3829 \
-                        sha256  5a8e658197b5aed429bc90efb3279e637f4e019be00e64d47c87293e7ecc9ae9
+                        md5     8a1b5945f76a6d00f5ffb4cbb8564480 \
+                        sha1    6d4e66ba8de47e7da9553d9903be851cfe85e051 \
+                        sha256  04d7ee38ae98ff468b2da4ce1055f4f1fcf750e395712ab45eb9b8c4cdcab946
 
 set gopath      ${workpath}/gopath
 set gosrc       ${gopath}/src

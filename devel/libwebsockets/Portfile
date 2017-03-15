@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 PortGroup           github 1.0
 
-github.setup        warmcat libwebsockets 2.1.1 v
+github.setup        warmcat libwebsockets 2.2.0 v
 categories          devel
 platforms           darwin
 license             LGPL-2.1 (with exceptions)
@@ -14,7 +14,7 @@ maintainers         gmail.com:justrafi
 description         C websockets server library
 long_description    ${name}: ${description}
 
-checksums           rmd160  245aac411ca6883eb927bb309bb9fc18a5ce2311 \
-                    sha256  19a0af2c6f71e7680f7c10bfb21cf82affc681e5051efa1e8421563290f1e5f3
+checksums           rmd160  74c69f63728cf51fdc4b6a177f0670d19d4cc491 \
+                    sha256  01ef37dc414976e6acd611a58c51529cd4041586e742849dbe365bf07fdb2996
 
 depends_lib         port:openssl

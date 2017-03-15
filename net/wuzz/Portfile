@@ -3,9 +3,11 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        asciimoo wuzz 711176ab446817632e7f6f07615898e310233db2
 
-version             20170225
+github.setup        asciimoo wuzz 0.3.0 v
+github.tarball_from releases
+
+version             20170314
 categories          net
 platforms           darwin
 license             MIT
@@ -17,107 +19,21 @@ long_description    Wuzz command line arguments are similar to cURL's \
                     copied from the browser's network inspector with \
                     the "copy as cURL" feature.
 
-supported_archs     noarch
-checksums           ${name}-${git.branch}.tar.gz \
-                    rmd160  bd6865640e1a6e81a532df1333b4ea5bfe24da0f \
-                    sha256  d8876c4fecd2c485bba2bd9f46730b7518fbfe7ee9fe72aacd6ef80becb8df50
+checksums           rmd160  11e714d7a7b3e7c016d3d88429f6ac63cfedb30f \
+                    sha256  6491a2ec31f83fcaeb1f55e7478fcfb8adde431c22a61d18bdcd208103e133c5
 
-depends_build   port:go
-use_configure   no
+supported_archs     x86_64
+distname            ${name}
+extract.suffix      _${os.platform}_amd64
+extract.mkdir       yes
+use_configure       no
 
-# Utility for go-vendoring codes
-set go.vendors {}
-
-# go.vendors-append name1 ver1 name2 ver2...
-proc go.vendors-append {args} {
-    global go.vendors
-
-    foreach {imp_name vers} ${args} {
-        set vlist [split ${imp_name} /]
-
-        set vdomain [lindex ${vlist} 0]
-        set vuser [lindex ${vlist} 1]
-        set vname [lindex ${vlist} 2]
-
-        # NOTE: now expects github.com or golang.org
-        switch -exact ${vdomain} {
-            github.com { set ghuser ${vuser} }
-            golang.org { set ghuser golang }
-        }
-
-        set fname ${ghuser}-${vname}
-        lappend go.vendors [list ${fname} ${imp_name} ${vers}]
-
-        global ${vname}.version
-        set ${vname}.version ${vers}
-
-        master_sites-append https://github.com/${ghuser}/${vname}/tarball/${vers}:${fname}
-        distfiles-append    ${fname}-${vers}.tar.gz:${fname}
-    }
+extract {
+    file copy ${distpath}/${distname}${extract.suffix} ${worksrcpath}/${name}
 }
 
-# dependencies to build.
-go.vendors-append  github.com/jroimartin/gocui  ed41d1bd2c217d4d1e312c2ee5d2f0c7793a99cc \
-                   github.com/nsf/termbox-go    3540b76b9c77679aeffd0a47e00243fb0ce47133 \
-                   github.com/mattn/go-runewidth  14207d285c6c197daabb5c9793d63e7af9ab2d50 \
-                   github.com/nwidger/jsoncolor   3709c0e10f63511e81353d16590b6d414d3a13e4 \
-                   github.com/BurntSushi/toml     99064174e013895bbd9b025c31100bd1d9b590ca \
-                   github.com/fatih/color         5ec5d9d3c2cf82e9688b34e9bc27a94d616a7193 \
-                   github.com/mitchellh/go-homedir b8bc1bf767474819792c23f32d8286a45736f1c6 \
-                   github.com/mattn/go-colorable  5411d3eea5978e6cdc258b30de592b60df6aba96 \
-                   github.com/mattn/go-isatty     281032e84ae07510239465db46bf442aa44b953a
-
-checksums-append    jroimartin-gocui-${gocui.version}.tar.gz \
-                        md5     30b3e21d774283e7a37fd0a922c97be2 \
-                        sha1    9739396afccd5d71f5be0f861098af16c76486a7 \
-                        sha256  eefb29758c7dfd84718b8504020bd8e89aacf9951550d3f46866c1aee2304513 \
-                        rmd160  8880f132bc1903130e304f5ced64f4ba8581fee6 \
-                    nsf-termbox-go-${termbox-go.version}.tar.gz \
-                        rmd160  e978c06489739a121de2639c10ea1e75dec76c10 \
-                        sha256  e87be29c32ddce9e46e7fb8adf73ba1d1675119071e9e98c322d52a7bee47f36 \
-                    mattn-go-runewidth-${go-runewidth.version}.tar.gz \
-                        rmd160  38f344bca8cdd209a3d80a079b4c0c123ac34012 \
-                        sha256  74e7a92bf6620c2acfee5594d60b93d0496611e79fbdf822f95c1b8d0228eab8 \
-                    nwidger-jsoncolor-${jsoncolor.version}.tar.gz \
-                        rmd160  ee7cd8a9718f6fdb5cde7dbe81831e37d385618a \
-                        sha256  77492140062b36f69d5b5d6eb2e1b8f81e0afbc7641bfa76d890ad6a2dd7e018 \
-                   BurntSushi-toml-${toml.version}.tar.gz \
-                        rmd160  e3085bcf1591c7c42b6e6f256a69b76d251f1e7e \
-                        sha256  4fa03c03b0ae8abd28bdd7c575fbf1c4a173b0019372eeebaf06e8088772c2ae \
-                   fatih-color-${color.version}.tar.gz \
-                        rmd160  8e70a869e6fda997ee6c9498ca3865670244d93e \
-                        sha256  4702fd025957ace07ed787135065f5244bb321ecf60265aeaa87f67b5db206d2 \
-                   mitchellh-go-homedir-${go-homedir.version}.tar.gz \
-                        rmd160  5e918bec979c68204903d7051c51ab5b6a8eaca1 \
-                        sha256  7ec12f9dbe4f40dc58609708ea1a3fd9aa424023b258d40218153a67a5c87694 \
-                   mattn-go-colorable-${go-colorable.version}.tar.gz \
-                        rmd160  b0e9fb39794d5de2d1732a269c4efd62ebb431a8 \
-                        sha256  27419763d1a554cb24390296f27f73027ef3fe39d7faa950e0fe46db464dd41f \
-                   mattn-go-isatty-${go-isatty.version}.tar.gz \
-                        rmd160  aa766f66241039cc363f395806143e8dd1f4f3cc \
-                        sha256  77c403e8fb3db6cb94775ca8ff31ba4afa5447f25fb23d0de0172d8ff9047791
-
-set gopath      ${workpath}/wuzz
-set gosrc       ${gopath}/src
-set package_dir github.com/asciimoo/wuzz
-
-post-extract {
-    file mkdir ${gosrc}/github.com/${github.author}
-    ln -s ${worksrcpath} ${gosrc}/github.com/${github.author}/${github.project}
-    foreach vlist ${go.vendors} {
-        set fname [lindex ${vlist} 0]
-        set imp_name [lindex ${vlist} 1]
-        file mkdir ${gosrc}/[file dirname ${imp_name}]
-        move [glob ${workpath}/${fname}-*] ${gosrc}/${imp_name}
-    }
-}
-
-build.cmd       go
-build.target    build
-build.args
-build.env       GOPATH="${gopath}"
+build    {}
 
 destroot {
-    xinstall -d ${destroot}${prefix}/bin
-    xinstall -m 755 ${worksrcpath}/${name}-${git.branch} ${destroot}${prefix}/bin/${name}
+    xinstall -m 0755 ${worksrcpath}/${name} ${destroot}${prefix}/bin/${name}
 }

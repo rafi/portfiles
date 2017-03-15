@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        junegunn fzf 0.16.5
+github.setup        junegunn fzf 0.16.6
 
 categories          sysutils
 platforms           darwin
@@ -14,8 +14,8 @@ description         A command-line fuzzy finder
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  ed19bb6efecac69401897674b50991b7df701f8f \
-                    sha256  5e19e347ad5949f6de4cf80627048d65dff5174434a87b920e6b12781558ff9b
+checksums           rmd160  995bc9966dd62793a3ccd31c64b4744ed29b4ddf \
+                    sha256  088438f16b503a35433eb35c668e550c07d6d2db831e69cc8c952d468fe8f564
 
 depends_build   port:go
 use_configure   no
