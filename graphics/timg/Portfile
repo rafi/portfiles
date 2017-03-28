@@ -1,0 +1,42 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        hzeller timg 218830b9ca56453a553e9c96a6abdf1d013076b2
+
+version             20170325
+categories          graphics
+platforms           darwin
+license             GPL-2.0
+
+maintainers         gmail.com:justrafi
+description         A terminal image viewer
+long_description    A viewer that uses 24-Bit color capabilities and unicode \
+                    character blocks to display images in the terminal.
+
+checksums           rmd160  ac71ba1d51096feedc8bfee379b49c1f4edd15a5 \
+                    sha256  26eb0f41a6fabd61453c2454acb43edfc3d5e35a2b0637121ce006911f5aae0a
+
+use_configure       no
+worksrcdir          ${name}-${git.branch}/src
+
+depends_lib-append  port:GraphicsMagick
+
+build.target        ${name}
+build.env-append    PKG_CONFIG_PATH=$prefix/lib/pkgconfig \
+                    CFLAGS="${configure.cflags} [get_canonical_archflags]" \
+                    LDFLAGS="${configure.ldflags} [get_canonical_archflags]" \
+                    MAGICK_CXXFLAGS="-I/opt/local/include/GraphicsMagick" \
+                    MAGICK_LDFLAGS="-L/opt/local/lib -L/opt/local/lib -Wl," \
+                        "-headerpad_max_install_names  -L/opt/local/lib " \
+                        "-lGraphicsMagick++ -lGraphicsMagick -lwebp -llcms2 " \
+                        "-ltiff -lfreetype -ljasper -ljpeg -lpng16 -llzma " \
+                        "-lbz2 -lxml2 -lz -lm -lpthread"
+
+build.args-append   CC=${configure.cc} \
+                    LD=${configure.cc}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/${name} ${destroot}${prefix}/bin
+}
