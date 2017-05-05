@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        docker docker 17.03.0-ce v
+github.setup        moby moby 17.04.0-ce v
 
 name                docker-bash-completion
 categories          devel
@@ -15,8 +15,8 @@ description         bash completion file for core docker commands
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  18499566100d9c1ac08582c3b85836e05c8b0119 \
-                    sha256  738e9683057e81a6f805e4f26a53534ba1bbc6875d6ba0d8a1ac6206f508ef92
+checksums           rmd160  3625709d1831e018d6cdf3b2cb90c4e7819f8a09 \
+                    sha256  101ab39fa5535b52327caf2f352548da6a99575ad672cbce86bec279e46a76fb
 
 use_configure       no
 

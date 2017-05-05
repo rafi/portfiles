@@ -4,7 +4,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        spf13 hugo 0.19 v
+github.setup        spf13 hugo 0.20.7 v
 github.tarball_from releases
 
 categories          www
@@ -15,32 +15,29 @@ maintainers         gmail.com:justrafi
 description         Fast and Flexible Static Site Generator built with love
 long_description    ${name}: ${description}
 
-checksums           ${name}_${version}_macOS-64bit.zip \
-                    rmd160  3493e417d6c832f254989b480e88d18fd7c177fc \
-                    sha256  27ee0b7046b29cd7e0b44029f000192d0db76fd4107d91c12b92a60898c1e0a2 \
-                    ${name}_${version}_macOS-32bit.zip \
-                    rmd160  b9aa1dc8ff802a36ced3930c251373575b013a8d \
-                    sha256  e8e7d07a81c00d9a8c8b387ae967181b4be5fab13cf907656e2e16f4bba7b311
+checksums           ${name}_${version}_macOS-64bit.tar.gz \
+                    rmd160  dba63c268eb4ad02f6ec3e02e02938060cea5545 \
+                    sha256  5e4d1483e3d0f7b13222e675781f1ebe097b4f49b47318e4510021a4c0fa78fe \
+                    ${name}_${version}_macOS-32bit.tar.gz \
+                    rmd160  2c495ba39e8db1983209f6ce1b5adc0a550fc0f3 \
+                    sha256  eb06071c6468187f89219f0e0edda0defffa3a3274fd0c4d6583a4a066bf0779
 
 supported_archs     x86_64 i386
 use_configure       no
-use_zip             yes
 
 depends_run-append  path:etc/bash_completion:bash-completion
 
 distname            ${name}_${version}
 extract.mkdir       yes
 if {$build_arch == "x86_64"} {
-    extract.suffix _macOS-64bit.zip
-    set real_name ${name}_${version}_${os.platform}_amd64
+    extract.suffix _macOS-64bit.tar.gz
 } else {
-    extract.suffix _macOS-32bit.zip
-    set real_name ${name}_${version}_${os.platform}_amd32
+    extract.suffix _macOS-32bit.tar.gz
 }
 
 build    {}
 destroot {
-    xinstall -m 0755 ${worksrcpath}/${real_name}/${real_name} \
+    xinstall -m 0755 ${worksrcpath}/${name} \
         ${destroot}${prefix}/bin/${name}
 
     # Man pages

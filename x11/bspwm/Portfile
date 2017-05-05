@@ -3,9 +3,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        baskerville bspwm 047a9ecfcc9bcccc4b80f7a259e3f0deaec2760f
+github.setup        baskerville bspwm e5cb04df189c721aee23f1cbbc729ab18ec8c9de
 
-version             20170305
+version             20170421
 categories          x11 x11-wm
 platforms           darwin
 license             BSD 2-clause
@@ -16,8 +16,8 @@ long_description    bspwm is a tiling window manager that represents windows \
                     as the leaves of a full binary tree. It is controlled \
                     and configured via bspc.
 
-checksums           rmd160  4022b1c59dffb81d508428b2d1b72cae9c8070bd \
-                    sha256  970fdf2939f7b15097d201a8fe1670fe43832bddd6d082960fae504aad230a33
+checksums           rmd160  83de3bd0eddda860cbb749fb8abb946abf3a1676 \
+                    sha256  e0e56ace4823ae1d201befa1dbe92988423489596ca6fd734d645f8388cd5f1f
 
 depends_lib         port:xorg-xcb-util \
                     port:xorg-xcb-util-wm \

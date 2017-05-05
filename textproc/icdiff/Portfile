@@ -3,9 +3,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        jeffkaufman icdiff dd5a5ac3d346687a981e4355fee33ed18062f376
+github.setup        jeffkaufman icdiff 1cf9d4ac5fac68808a108d112bcbd0ca4714cb51
 
-version             20170313
+version             20170429
 categories          textproc
 platforms           darwin
 license             MIT
@@ -17,8 +17,8 @@ long_description    ${name}: ${description}. Show differences between files \
 homepage            http://www.jefftk.com/icdiff
 
 supported_archs     noarch
-checksums           rmd160  253dd35884265d495c6312d8b103f109c0dd38b4 \
-                    sha256  277035499730b2b6ae00bbe76c46ce3f33ff60401860aa71bd8720cdbe10a9f7
+checksums           rmd160  71dcdb3cb884088e4aec55ecdcb7349076ed6723 \
+                    sha256  1b46757c83345c878f6e69a85517326220f0ef24154cc89999845a03323878b4
 use_configure       no
 
 build {}

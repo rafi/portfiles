@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 PortGroup           github 1.0
 
-github.setup        tsl0922 ttyd 1.3.1
+github.setup        tsl0922 ttyd 1.3.2
 categories          net
 platforms           darwin
 license             MIT
@@ -14,8 +14,8 @@ maintainers         gmail.com:justrafi
 description         Command-line tool for sharing terminal over the web
 long_description    ${name}: ${description}
 
-checksums           rmd160  1bb32e5117ec572517af3550786886bd6b380915 \
-                    sha256  b94d74ee58b41504a94dea0308e8914d6a65c4a6dc8aad5dceb356b09174a046
+checksums           rmd160  27f169e08967a4adeb172e3c36f962e6ecf96cc6 \
+                    sha256  19e71e972b1dfc88ad6316f830c27f2f24ee4fad8353becd6f5bf7fe3dbf1160
 
 depends_lib         port:openssl \
                     port:json-c \

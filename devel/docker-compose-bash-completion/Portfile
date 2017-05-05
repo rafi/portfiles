@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        docker compose 1.11.2
+github.setup        docker compose 1.13.0
 
 name                docker-compose-bash-completion
 categories          devel
@@ -14,8 +14,8 @@ description         bash completion file for docker-compose commands
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  9c739082d38fa6f27788eec32f1b8096fa449165 \
-                    sha256  6e7f5d059d78dbc3f586728d4a47e1786839eca1f1fe332a5aeec951c08e0138
+checksums           rmd160  0483e594ff61ac4cb2cd384f9efc0f894faca53a \
+                    sha256  bf187637fe931a6487b97e8db839d065fec865e4d9fd3ad74f94f9dfe1e44afc
 
 use_configure       no
 
