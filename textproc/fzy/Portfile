@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        jhawthorn fzy df59e214132b57771bdac1232c89808073b7fdec
+
+version             20170527
+categories          textproc
+platforms           darwin
+license             MIT
+
+maintainers         gmail.com:justrafi
+description         A better fuzzy finder
+long_description    fzy is faster and shows better results than other \
+                    fuzzy finders.
+
+checksums           rmd160  6083eee517cd612667337c75f19732b0b2665198 \
+                    sha256  a4ca23ad8cffbcd1bb402654d6678fe0bec0fd771f39349e97191c490b79bfc2
+
+use_configure       no
+
+build.env-append        PKG_CONFIG_PATH=$prefix/lib/pkgconfig \
+                        CFLAGS="${configure.cflags} [get_canonical_archflags]" \
+                        LDFLAGS="${configure.ldflags} [get_canonical_archflags]"
+
+build.args-append       CC=${configure.cc} \
+                        LD=${configure.cc} \
+                        COLOR=0 \
+                        VERBOSE=
+
+destroot.args-append    PREFIX=${prefix} \
+                        SYSCONFDIR=${prefix}/etc/ \
+                        COLOR=0 \
+                        VERBOSE=
