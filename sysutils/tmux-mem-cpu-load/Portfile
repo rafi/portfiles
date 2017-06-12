@@ -6,7 +6,7 @@ PortGroup           cmake 1.0
 PortGroup           github 1.0
 
 github.setup        thewtex tmux-mem-cpu-load 3.4.0 v
-categories          audio
+categories          sysutils
 platforms           darwin
 license             Apache-2.0
 
