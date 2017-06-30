@@ -8,7 +8,7 @@ categories          editors
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         v uses viminfo's list of recently edited files to open one quickly no matter where you are in the filesystem.
 long_description    ${name}: ${description}
 

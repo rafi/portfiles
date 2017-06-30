@@ -9,7 +9,7 @@ categories          textproc
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A better fuzzy finder
 long_description    fzy is faster and shows better results than other \
                     fuzzy finders.

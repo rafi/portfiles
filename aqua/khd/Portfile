@@ -10,7 +10,7 @@ categories          aqua
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Tiling window manager with focus follows mouse for OSX
 long_description    ${name}: ${description}
 

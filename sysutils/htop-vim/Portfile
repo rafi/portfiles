@@ -9,7 +9,7 @@ categories          sysutils
 platforms           darwin
 license             GPL-2
 
-maintainers         cal openmaintainer
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         htop is an interactive text-mode process viewer for Unix \
                     systems.
 long_description    ${name}: ${description} It aims to be a better 'top'.

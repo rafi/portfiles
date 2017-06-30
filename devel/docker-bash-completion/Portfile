@@ -9,7 +9,7 @@ categories          devel
 platforms           darwin
 license             Docker
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         bash completion file for core docker commands
 long_description    ${name}: ${description}
 

@@ -9,7 +9,7 @@ categories          graphics
 platforms           darwin
 license             GPL-2.0
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A terminal image viewer
 long_description    A viewer that uses 24-Bit color capabilities and unicode \
                     character blocks to display images in the terminal.

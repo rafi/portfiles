@@ -8,7 +8,7 @@ name                m-cli
 categories          sysutils
 platforms           darwin
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Swiss Army Knife for Mac OS X
 long_description    ${name}: ${description}
 

@@ -14,7 +14,7 @@ license             GPL-2
 conflicts        developer_cmds \
                  ctags
 
-maintainers      gmail.com:justrafi
+maintainers      {gmail.com:justrafi @rafi} openmaintainer
 homepage         http://ctags.io/
 description      A maintained ctags implementation
 long_description \

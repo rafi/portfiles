@@ -10,7 +10,7 @@ categories          devel
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Top-like interface for container metrics
 long_description    ctop provides a concise and condensed overview of \
                     real-time metrics for multiple containers as well \

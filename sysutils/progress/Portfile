@@ -8,7 +8,7 @@ categories          devel
 platforms           darwin
 license             GPL-3.0
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 
 description         Linux tool to show progress for cp, mv, dd, ...
 long_description    ${name}: ${description} (formerly known as cv)

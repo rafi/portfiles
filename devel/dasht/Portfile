@@ -9,7 +9,7 @@ categories          devel
 platforms           darwin
 license             ISC
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Search API docs offline, in terminal or browser
 long_description    dasht is a collection of shell scripts for searching, \
                     browsing, and managing API documentation (in the form of \

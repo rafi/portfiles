@@ -9,7 +9,7 @@ categories          x11
 platforms           darwin
 license             BSD 2-clause
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Simple X hotkey daemon
 long_description    ${name}: \
                     sxhkd is a simple X hotkey daemon with a powerful \

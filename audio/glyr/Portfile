@@ -9,7 +9,7 @@ categories          audio
 platforms           darwin
 license             GPL-3.0
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         music related metadata searchengine
 long_description    ${name}: ${description}, \
                     both with commandline interface and C API

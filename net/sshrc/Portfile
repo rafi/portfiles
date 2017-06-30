@@ -9,7 +9,7 @@ categories          sysutils net
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         bring your .bashrc, .vimrc, etc. with you when you ssh
 long_description    ${name}: ${description}
 

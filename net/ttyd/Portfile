@@ -9,7 +9,7 @@ categories          net
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Command-line tool for sharing terminal over the web
 long_description    ${name}: ${description}
 

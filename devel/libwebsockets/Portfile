@@ -9,7 +9,7 @@ categories          devel
 platforms           darwin
 license             LGPL-2.1 (with exceptions)
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         C websockets server library
 long_description    ${name}: ${description}
 

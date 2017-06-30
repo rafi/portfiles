@@ -12,7 +12,7 @@ categories          net
 platforms           darwin
 supported_archs     noarch
 license             MIT
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 
 description         curl statistics made simple
 long_description    ${name}: ${description}

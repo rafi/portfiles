@@ -8,7 +8,7 @@ categories          sysutils
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Manage a pool of Tmux project-files. Tiny little helper.
 long_description    ${name}: ${description}
 

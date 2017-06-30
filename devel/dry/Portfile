@@ -11,7 +11,7 @@ categories          devel
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A Docker container manager for the terminal
 long_description    ${name}: ${description}
 

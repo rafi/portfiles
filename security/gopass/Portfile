@@ -9,7 +9,7 @@ categories          devel
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Gopass: A simple password-store GUI
 long_description    ${name}: ${description}
 

@@ -8,7 +8,7 @@ categories          sysutils
 platforms           darwin
 license             ISC
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Run arbitrary commands when files change
 long_description    ${name}: ${description}
 homepage            http://entrproject.org/

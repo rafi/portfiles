@@ -9,7 +9,7 @@ categories          x11
 platforms           darwin
 license             BSD 2-clause
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         unix command cam: view images inside termin
 long_description    ${name}: ${description}
 

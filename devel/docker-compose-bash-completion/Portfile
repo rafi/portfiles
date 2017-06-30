@@ -8,7 +8,7 @@ name                docker-compose-bash-completion
 categories          devel
 platforms           darwin
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         bash completion file for docker-compose commands
 long_description    ${name}: ${description}
 

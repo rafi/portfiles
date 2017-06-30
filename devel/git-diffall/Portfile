@@ -9,7 +9,7 @@ categories          sysutils
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Script to perform directory diffs using an external diff tool in Git
 long_description    ${name}: ${description}
 

@@ -9,7 +9,7 @@ categories          x11 x11-wm
 platforms           darwin
 license             BSD 2-clause
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A tiling window manager based on binary space partitioning
 long_description    bspwm is a tiling window manager that represents windows \
                     as the leaves of a full binary tree. It is controlled \

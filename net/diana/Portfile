@@ -9,7 +9,7 @@ categories          sysutils
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A command line interface to the aria2 daemon
 long_description    ${name}: ${description}
 

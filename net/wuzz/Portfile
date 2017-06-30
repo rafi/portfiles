@@ -11,7 +11,7 @@ categories          net
 platforms           darwin
 license             MIT
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Interactive cli tool for HTTP inspection
 long_description    Wuzz command line arguments are similar to cURL's \
                     arguments, so it can be used to inspect/modify requests \

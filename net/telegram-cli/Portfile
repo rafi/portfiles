@@ -9,7 +9,7 @@ categories          x11
 platforms           darwin
 license             GPL-2.0
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Command-line interface for Telegram.
 long_description    ${name}: ${description} Uses readline interface.
 
