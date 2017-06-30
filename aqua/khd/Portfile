@@ -4,7 +4,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        koekeishiya khd 2.2.2 v
+github.setup        koekeishiya khd 3.0.0 v
 github.tarball_from releases
 
 categories          aqua
@@ -15,8 +15,8 @@ maintainers         gmail.com:justrafi
 description         Tiling window manager with focus follows mouse for OSX
 long_description    ${name}: ${description}
 
-checksums           rmd160  a457b40eb9e86bfea0de35342c3b17db9cea3d53 \
-                    sha256  c34cf65fb4b30de98ee8b216c8000bd4617a9bd94fb44b93a41d0fcc493e1855
+checksums           rmd160  1461207041cbcf6289b98313ba796fad4a5b71f5 \
+                    sha256  62dac986d6c579511ac364bdd69d55c72086e83e18363c5dcea4d4a2a7ac905c
 
 supported_archs     x86_64
 use_configure       no

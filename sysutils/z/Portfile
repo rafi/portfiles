@@ -3,9 +3,8 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        rupa z 1a361f6dc10e54e34e42f1e03850692959c6b413
+github.setup        rupa z 1.11 v
 
-version             20160720
 categories          sysutils
 platforms           darwin
 license             MIT
@@ -16,8 +15,8 @@ long_description    ${name}: ${description} and provides a convenient way to \
                     jump to directory that you actually use.
 
 supported_archs     noarch
-checksums           rmd160  8cf9f4e1b748c74b280a7ada0b41e1537ad1d227 \
-                    sha256  9ebbb164e4073d51f1f7f59aa4db41a2a48d47fbfb29d98fb9948fa970edb3a1
+checksums           rmd160  64173ef1b8e77f1db4ee53486f55159ed8b43d83 \
+                    sha256  a06d8d56bd8373229b1f11690ac5d9f13753215ce57488efa1c5a6efc6f735bb
 use_configure       no
 
 build {}

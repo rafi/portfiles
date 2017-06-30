@@ -4,7 +4,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        moncho dry 0.8-beta.1 v
+github.setup        moncho dry 0.8-beta.2 v
 github.tarball_from releases
 extract.suffix
 
@@ -18,11 +18,11 @@ long_description    ${name}: ${description}
 
 supported_archs     x86_64 i386
 checksums           ${name}-${os.platform}-amd64 \
-                    rmd160  177be97597b67d2762eaa3ad1ee9410901903b29 \
-                    sha256  e7d1051bf176e226fb5bfec1a18803dc58978ed0b59025fbf67a90559d6c1c89 \
+                    rmd160  e8b5b58e66e91bb8d776146018c49eefdee11765 \
+                    sha256  63c18d3cc4e8c0ae741ed884cd7eaac6243523e2127457fa26362b056d5dd988 \
                     ${name}-${os.platform}-386 \
-                    rmd160  243c4844c11e70d99aad0854b86ca87ae21f17cb \
-                    sha256  d79c7e7b1f044696a2e10cfc148e83c6a44cfe10e737069b903c4e9c7eba8e8e
+                    rmd160  daaf9d5af97e11b3e5406838baf4a2d38110863b \
+                    sha256  701ebfbab69d980d7c736b824427df9800ea984e1231395772649f0f26dd3498
 
 use_configure       no
 

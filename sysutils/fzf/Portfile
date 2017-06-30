@@ -3,7 +3,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        junegunn fzf 0.16.7
+github.setup        junegunn fzf 0.16.8
 
 categories          sysutils
 platforms           darwin
@@ -14,13 +14,12 @@ description         A command-line fuzzy finder
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  0383f6ea8f53a3fcd8f84b04fdecbdf789390052 \
-                    sha256  0709b276699d18f398f471082d444ecff2df23fece50ed9733832cc854a2ad26
+checksums           rmd160  e3f028db90b817958bc91e1f456bf53911bb1831 \
+                    sha256  a55d71214f0a4710083a63865a43ec2f9fc3898365819925081e6b7c13bfce28
 
 depends_build   port:go
 use_configure   no
 
-build.dir       ${worksrcpath}/src
 build.env       GOPATH="${workpath}"
 
 variant vim description {Vim integration} {}
@@ -38,7 +37,7 @@ post-extract {
 
 destroot {
     xinstall -d ${destroot}${prefix}/bin
-    xinstall -m 755 ${worksrcpath}/src/${name}/${name}-darwin_amd64 ${destroot}${prefix}/bin/${name}
+    xinstall -m 755 ${worksrcpath}/target/${name}-darwin_amd64 ${destroot}${prefix}/bin/${name}
 
     if {[variant_isset tmux]} {
         xinstall -m 755 ${worksrcpath}/bin/${name}-tmux ${destroot}${prefix}/bin
