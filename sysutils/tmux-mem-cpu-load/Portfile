@@ -9,9 +9,10 @@ categories          sysutils
 platforms           darwin
 license             Apache-2.0
 
-maintainers         gmail.com:justrafi
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         CPU, RAM, and load monitor for use with tmux
-long_description    ${name}: ${description}
+long_description    A simple, lightweight program provided for system \
+                    monitoring in the status line of tmux.
 
 checksums           rmd160  0851ffe84f0c9767dcbe05c9662fbf8f3baabf50 \
                     sha256  7b84807a02262b8162bb37de0cd43a0ec2b253758a92b0bd33b8bd9d17929692
