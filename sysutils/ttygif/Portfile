@@ -1,0 +1,28 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+github.setup        icholy ttygif 913f8e5bb5b3cb7f4d77f12dfa24c5abe6fa70c9
+
+version             20170609
+categories          sysutils
+platforms           darwin
+license             MIT
+
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
+description         Convert terminal recordings to animated gifs
+long_description    ttygif converts a ttyrec file into gif files. \
+                    It's a stripped down version of ttyplay that screenshots \
+                    every frame.
+
+checksums           rmd160  2a1ac0e8e00f356425a8834e8cdc042c1df92231 \
+                    sha256  ee21cb140f25ea56207b12324a0d46de2088b8f770dbb8853c92511919e565ba
+
+use_configure       no
+
+build.env-append    CFLAGS="${configure.cflags} [get_canonical_archflags]" \
+                    LDFLAGS="${configure.ldflags} [get_canonical_archflags]"
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/${name} ${destroot}${prefix}/bin
+}
