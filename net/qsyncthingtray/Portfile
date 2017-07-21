@@ -7,7 +7,7 @@ PortGroup           github 1.0
 PortGroup           app 1.0
 PortGroup           qt5 1.0
 
-github.setup        sieren QSyncthingTray 0.5.7
+github.setup        sieren QSyncthingTray 0.5.8
 categories          net
 platforms           darwin
 license             LGPL-3.0
@@ -16,8 +16,8 @@ maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A Traybar Application for Syncthing written in C++
 long_description    ${name}: ${description}
 
-checksums           rmd160  67618aced544f0b3ec1ee9b959cb93f50dd7aef6 \
-                    sha256  266d2a07ff0d91ffdc61231452d89705e3ac80373678392db6faaf63082a5fdf
+checksums           rmd160  da6997de7507562208e1f756f719e1c8e50f94cd \
+                    sha256  2830989fa3ef73665140603ca60fd31be952f5b7b5532c84c97c891a9a0af4e2
 
 default_variants    +webengine
 

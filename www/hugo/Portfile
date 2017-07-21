@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        spf13 hugo 0.24.1 v
+github.setup        spf13 hugo 0.25.1 v
 github.tarball_from releases
 
 categories          www
@@ -15,11 +15,11 @@ description         Fast and Flexible Static Site Generator built with love
 long_description    ${name}: ${description}
 
 checksums           ${name}_${version}_macOS-64bit.tar.gz \
-                    rmd160  4f42d1773627e7d6e2ac5be681e945358969909d \
-                    sha256  e376b13495b83736dcf54e9a48938defbd399cad39492285ea76be90623ca469 \
+                    rmd160  0646edf9d7d589a014a3b7efe4d421d82a70bad0 \
+                    sha256  8af2fa5e09efb1153afc1c9819ea6d446cc808284f6a0c7f64f5ebc20f66def6 \
                     ${name}_${version}_macOS-32bit.tar.gz \
-                    rmd160  d761064c78759aaad319b48d615fcaa5ffadf344 \
-                    sha256  d6fabd1c5019f290d3ed02a6ee889f1ebb7162aa4fa6f4b9d5a0b53cc72251eb
+                    rmd160  d77415d627a0f972551e6d8377122397197bc401 \
+                    sha256  52afde0f65c9550e369fc61f5a245cd619393753009a386bee8b48076545a8fa
 
 supported_archs     x86_64 i386
 use_configure       no
