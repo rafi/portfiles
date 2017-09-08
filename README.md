@@ -14,44 +14,52 @@ Ports
 The ports included are:
 ```txt
 .
+├── aqua
+│   ├── khd
+│   └── kwm
 ├── audio
-│   └── glyr
+│   └── glyr
 ├── devel
-│   ├── diff-so-fancy
-│   ├── docker-bash-completion
-│   ├── docker-compose-bash-completion
-│   ├── docker-gc
-│   ├── dockfmt
-│   ├── dry
-│   ├── git-diffall
-│   └── libwebsockets
+│   ├── codequery
+│   ├── ctop
+│   ├── dasht
+│   ├── diff-so-fancy
+│   ├── dockfmt
+│   ├── dry
+│   ├── libwebsockets
+│   └── universal-ctags
 ├── editors
-│   └── v
+│   └── neovim-qt
 ├── graphics
-│   ├── cam
-│   └── sxiv
+│   ├── cam
+│   └── timg
 ├── net
-│   ├── diana
-│   ├── httpstat
-│   ├── qsyncthingtray
-│   ├── sshrc
-│   ├── telegram-cli
-│   └── ttyd
+│   ├── diana
+│   ├── httpstat
+│   ├── qsyncthingtray
+│   ├── sshrc
+│   ├── telegram-cli
+│   ├── ttyd
+│   └── wuzz
+├── office
+│   └── task
 ├── security
-│   └── gopass
+│   └── gopass
 ├── sysutils
-│   ├── enhancd
-│   ├── entr
-│   ├── fzf
-│   ├── htop-vim
-│   ├── lemonade
-│   ├── m-cli
-│   ├── mux
-│   ├── progress
-│   ├── tmux-mem-cpu-load
-│   └── z
+│   ├── clipper
+│   ├── enhancd
+│   ├── fzf
+│   ├── htop-vim
+│   ├── lemonade
+│   ├── mux
+│   ├── progress
+│   ├── tmux
+│   └── ttygif
 ├── textproc
-│   └── icdiff
+│   ├── p5-textbidi
+│   └── ripgrep-bin
+├── www
+│   └── hugo
 └── x11
     ├── bspwm
     └── sxhkd
