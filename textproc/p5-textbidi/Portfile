@@ -1,0 +1,22 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=portfile:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           perl5 1.0
+
+perl5.branches      5 5.22 5.24
+perl5.setup         Text-Bidi 2.12
+categories-append   textproc
+platforms           darwin
+license             MIT
+
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
+description         Make urxvt present Bidi text correctly
+long_description    This extension filters the text displayed by Urxvt, \
+                    so that Bi-directional text (e.g., Hebrew or Arabic \
+                    mixed with English) is displayed correctly.
+
+supported_archs     noarch
+checksums           rmd160  651a823773650771bdf2142ad1c9adaa144afe66 \
+                    sha256  72e700cc4e7f48eb479989cc9d38362d24c58ea6fb1e0fe3390a832903943fa7
+
+depends_build-append  port:p${perl5.default_branch}-extutils-pkgconfig
