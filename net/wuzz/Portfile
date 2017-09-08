@@ -3,10 +3,9 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        asciimoo wuzz 0.3.0 v
+github.setup        asciimoo wuzz 0.4.0 v
 github.tarball_from releases
 
-version             20170314
 categories          net
 platforms           darwin
 license             MIT
@@ -18,8 +17,8 @@ long_description    Wuzz command line arguments are similar to cURL's \
                     copied from the browser's network inspector with \
                     the "copy as cURL" feature.
 
-checksums           rmd160  11e714d7a7b3e7c016d3d88429f6ac63cfedb30f \
-                    sha256  6491a2ec31f83fcaeb1f55e7478fcfb8adde431c22a61d18bdcd208103e133c5
+checksums           rmd160  8647abb1649d9cf150e01484e4a258cf09b63b33 \
+                    sha256  c8a4bc7eef2511093fd55a1e38b90aeabb4b0016b01875ec143ae19358342470
 
 supported_archs     x86_64
 distname            ${name}
