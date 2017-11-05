@@ -2,9 +2,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        icholy ttygif 3962faa7e605aa0824ac9b60f813313d94585db3
+github.setup        icholy ttygif 96c8f88be518c633dfa22565371053bf636ad399
 
-version             20170809
+version             20171002
 categories          sysutils
 platforms           darwin
 license             MIT
@@ -15,8 +15,8 @@ long_description    ttygif converts a ttyrec file into gif files. \
                     It's a stripped down version of ttyplay that screenshots \
                     every frame.
 
-checksums           rmd160  fbba7b64b6d97ed050ccd07ce2d58c9bfce991ac \
-                    sha256  8aee31aabe84028f64d711f12f31d13fec999c9420155916d478a8f65574ea90
+checksums           rmd160  9f4779e0b4ed493297addbdbfeb03996985e7938 \
+                    sha256  366776949c3f4484cb3c9a6ffdab419efd1f93a484a7e75e8f4a34475f07d9d3
 
 use_configure       no
 

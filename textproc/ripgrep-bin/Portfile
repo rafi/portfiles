@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        BurntSushi ripgrep 0.6.0
+github.setup        BurntSushi ripgrep 0.7.1
 github.tarball_from releases
 
 name                ripgrep-bin
@@ -17,8 +17,8 @@ long_description    ripgrep is a command line search tool that combines the \
                     usability of The Silver Searcher (an ack clone) with the \
                     raw speed of GNU grep.
 
-checksums           rmd160  796d81f8f9edeb989cd554ec136b4a0ef78a5ca3 \
-                    sha256  2aeffe25322f886bcd846ac15b6574dc769865fb44b28a9b0c356f3004019685
+checksums           rmd160  3da7f14d27c483e224f9003ae471b878e2b5af63 \
+                    sha256  ee670b0fba46323ee9a2d1c5b8bee46fa3e45778f6f105f2e8e9ee29e8bd0d45
 
 supported_archs     x86_64
 use_configure       no

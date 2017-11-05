@@ -3,10 +3,10 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        moncho dry 0.8-beta.4 v
+github.setup        moncho dry 0.9-beta.1 v
 github.tarball_from releases
-extract.suffix
 
+version             20171013
 categories          devel
 platforms           darwin
 license             MIT
@@ -15,21 +15,15 @@ maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A Docker container manager for the terminal
 long_description    ${name}: ${description}
 
-supported_archs     x86_64 i386
-checksums           ${name}-${os.platform}-amd64 \
-                    rmd160  aeda23d2f60e9398691feceafbe3b0b7475f0608 \
-                    sha256  d1ebd9def79394e05265bbd1ed5db6f12190de08dc04120cc5f74da6b67134a1 \
-                    ${name}-${os.platform}-386 \
-                    rmd160  625adbc03fa4e6a65858e10e629d8dd99e4a4cff \
-                    sha256  5205e2238c322d1756d6ca3cca10558ef56cd7c4ffc1e6ead0ab40f1cb607459
+supported_archs     x86_64
+
+checksums           rmd160  0269b90cf8c0546f527352a28dee590584302ac5 \
+                    sha256  636a8dca7a181e2a086327d3197836a94be5648bd1cde3b1503dd43f1eb5736a
 
 use_configure       no
 
-if {$build_arch == "x86_64"} {
-    distname ${name}-${os.platform}-amd64
-} else {
-    distname ${name}-${os.platform}-386
-}
+distname            dry
+extract.suffix      -darwin-amd64
 
 extract {
     file copy ${distpath}/${distfiles} ${workpath}/${distname}

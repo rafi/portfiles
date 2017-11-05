@@ -2,8 +2,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        sunaku dasht 2.2.0 v
+github.setup        sunaku dasht 71e46d847b43a877da91c1843c984b5bc79448bd
 
+version             20170917
 categories          devel
 platforms           darwin
 license             ISC
@@ -16,8 +17,8 @@ long_description    dasht is a collection of shell scripts for searching, \
                     OS X) all from the comfort of your own terminal!
 
 supported_archs     noarch
-checksums           rmd160  4c91018d4e0081278c569d4c54246de6c03aa819 \
-                    sha256  cde86c09eab813f02ee4a6ae63ae287ab169920acaa9ce900ff71963da951bec
+checksums           rmd160  aa25fcedd13932f333f3ffd946e7aa93e23f5230 \
+                    sha256  967d96763dbbcfb9aeadc0d15cc425acc9d8f6a5de1828b0a4da2326a7aef5a5
 
 depends_lib-append  port:sqlite3 \
                     port:wget \

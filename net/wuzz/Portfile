@@ -3,9 +3,10 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        asciimoo wuzz 0.4.0 v
+github.setup        asciimoo wuzz 37fd35486fb5d2e05ec91e7e2df92fa621d14f24
 github.tarball_from releases
 
+version             20171025
 categories          net
 platforms           darwin
 license             MIT
