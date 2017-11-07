@@ -1,0 +1,32 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        mattes migrate 3.0.1 v
+github.tarball_from releases
+
+name                migrate-bin
+categories          devel
+platforms           darwin
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
+license             MIT
+
+description         Database migrations without dependencies
+long_description    Database migrations written in Go, use multiple sources \
+                    and different types of databases.
+
+checksums           rmd160  9f98c2090d3a224357c5814525e209c7ba1a896a \
+                    sha256  17e19678e930d4a48114937fb07300c107088d86a80c798630fabc08d32ee4ee
+
+supported_archs     x86_64
+use_configure       no
+
+
+distname            migrate.darwin-amd64
+extract.mkdir       yes
+
+build    {}
+destroot {
+    xinstall -m 755 ${worksrcpath}/${distname} ${destroot}${prefix}/bin/${github.project}
+}

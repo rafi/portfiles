@@ -1,0 +1,49 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        sharkdp fd 5.0.0 v
+github.tarball_from releases
+
+name                fd-bin
+categories          sysutils
+platforms           darwin
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
+license             MIT
+
+description         simple, fast and user-friendly alternative to find
+long_description    fd is a simple, fast and user-friendly alternative to \
+                    find. While it does not seek to mirror all of find's \
+                    powerful functionality, it provides sensible \
+                    (opinionated) defaults for 80% of the use cases.
+
+checksums           rmd160  5eb3d69d19448ad344c8befaa7c246de7f8c8bbc \
+                    sha256  04d24d69e7a01f7a2943d7d2d0b051c2f25c3da74581665cf2698c9c16b95b1a
+
+supported_archs     x86_64
+use_configure       no
+
+
+distname            fd-v${version}
+extract.suffix      -x86_64-apple-darwin.tar.gz
+extract.mkdir       yes
+set extract_path ${distname}-x86_64-apple-darwin
+
+default_variants +bash_completion
+
+variant bash_completion description {Completion for bash} {
+    depends_run-append path:etc/bash_completion:bash-completion
+}
+
+build    {}
+destroot {
+    xinstall -m 755 ${worksrcpath}/${extract_path}/fd ${destroot}${prefix}/bin
+    xinstall -m 444 ${worksrcpath}/${extract_path}/fd.1 ${destroot}${prefix}/share/man/man1
+
+    if {[variant_isset bash_completion]} {
+        set completion-dir ${destroot}${prefix}/share/bash-completion/completions
+        xinstall -d ${completion-dir}
+        xinstall -m 644 ${worksrcpath}/${extract_path}/autocomplete/fd.bash-completion ${completion-dir}/${github.project}
+    }
+}
