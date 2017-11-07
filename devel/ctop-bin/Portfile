@@ -6,6 +6,7 @@ PortGroup           github 1.0
 github.setup        bcicen ctop 0.6.1 v
 github.tarball_from releases
 
+name                ctop-bin
 categories          devel
 platforms           darwin
 license             MIT
@@ -25,11 +26,11 @@ extract.mkdir       yes
 use_configure       no
 
 extract {
-    file copy ${distpath}/${distname}${extract.suffix} ${worksrcpath}/${name}
+    file copy ${distpath}/${distname}${extract.suffix} ${worksrcpath}/${github.project}
 }
 
 build    {}
 
 destroot {
-    xinstall -m 0755 ${worksrcpath}/${name} ${destroot}${prefix}/bin/${name}
+    xinstall -m 0755 ${worksrcpath}/${github.project} ${destroot}${prefix}/bin/${github.project}
 }

@@ -6,6 +6,7 @@ PortGroup           github 1.0
 github.setup        moncho dry 0.9-beta.1 v
 github.tarball_from releases
 
+name                dry-bin
 version             20171013
 categories          devel
 platforms           darwin
@@ -13,7 +14,7 @@ license             MIT
 
 maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         A Docker container manager for the terminal
-long_description    ${name}: ${description}
+long_description    ${github.project}: ${description}
 
 supported_archs     x86_64
 
@@ -22,7 +23,7 @@ checksums           rmd160  0269b90cf8c0546f527352a28dee590584302ac5 \
 
 use_configure       no
 
-distname            dry
+distname            ${github.project}
 extract.suffix      -darwin-amd64
 
 extract {
@@ -31,5 +32,5 @@ extract {
 post-extract {}
 build {}
 destroot {
-    xinstall -m 0755 ${workpath}/${distname} ${destroot}${prefix}/bin/${name}
+    xinstall -m 0755 ${workpath}/${distname} ${destroot}${prefix}/bin/${github.project}
 }
