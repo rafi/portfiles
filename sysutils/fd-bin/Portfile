@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        sharkdp fd 5.0.0 v
+github.setup        sharkdp fd 6.0.0 v
 github.tarball_from releases
 
 name                fd-bin
@@ -18,8 +18,8 @@ long_description    fd is a simple, fast and user-friendly alternative to \
                     powerful functionality, it provides sensible \
                     (opinionated) defaults for 80% of the use cases.
 
-checksums           rmd160  5eb3d69d19448ad344c8befaa7c246de7f8c8bbc \
-                    sha256  04d24d69e7a01f7a2943d7d2d0b051c2f25c3da74581665cf2698c9c16b95b1a
+checksums           rmd160  6d48b49ece4b8da27127a1376b92c8556d2cecc2 \
+                    sha256  39b5fac3ef7137f52b97edeed441e316a61743684ac2a7b496196b79c54930ed
 
 supported_archs     x86_64
 use_configure       no

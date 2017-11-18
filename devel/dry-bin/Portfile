@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        moncho dry 0.9-beta.1 v
+github.setup        moncho dry 0.9-beta.2 v
 github.tarball_from releases
 
 name                dry-bin
@@ -18,8 +18,8 @@ long_description    ${github.project}: ${description}
 
 supported_archs     x86_64
 
-checksums           rmd160  0269b90cf8c0546f527352a28dee590584302ac5 \
-                    sha256  636a8dca7a181e2a086327d3197836a94be5648bd1cde3b1503dd43f1eb5736a
+checksums           rmd160  44fe2bba5b6b84cab934811ac3c31585a79646a7 \
+                    sha256  60e694231d2326fc1a353b101be902590f1715f6d5b2a677593979540b7d3a3d
 
 use_configure       no
 
