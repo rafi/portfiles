@@ -1,0 +1,32 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8::et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           python 1.0
+
+github.setup        maebert jrnl 1.9.8
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
+categories          office
+description         ${name} is a simple journal application for your command line.
+long_description    ${description} Journals are stored as human readable plain \
+                    text files - you can put them into a Dropbox folder for \
+                    instant syncing and you can be assured that your journal \
+                    will still be readable in 2050, when all your fancy iPad \
+                    journal applications will long be forgotten.
+platforms           darwin
+license             MIT
+homepage            http://maebert.github.io/jrnl/
+
+python.default_version      36
+
+depends_build       port:py${python.version}-setuptools
+depends_lib         port:py${python.version}-parsedatetime \
+                    port:py${python.version}-tz \
+                    port:py${python.version}-keyring \
+                    port:py${python.version}-keyrings.alt \
+                    port:py${python.version}-six \
+                    port:py${python.version}-dateutil \
+                    port:py${python.version}-tzlocal
+
+checksums           rmd160  0da5f010f026c620cae5b9db736a0a7007adf922 \
+                    sha256  2b83281ffb14086581ee4a3ebbd57513db8b6af7cc6180e61b3d7b22f31fb702

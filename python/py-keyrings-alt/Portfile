@@ -1,0 +1,32 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8::et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+PortGroup           github 1.0
+
+github.setup        jaraco keyrings.alt 2.3
+revision            0
+name                py-${name}
+maintainers         {gmail.com:justrafi @rafi} openmaintainer
+description         Alternate keyring backend implementations
+long_description    Alternate keyring backend implementations for use with \
+                    the keyring package.
+
+platforms           darwin
+license             MIT
+python.versions     27 34 35 36
+patchfiles          setuptools_scm.patch
+
+checksums           rmd160  c274a2f19027f92220095ccf770f57a80646d63a \
+                    sha256  8ba4576a7100685f92bed50e8cde3062c1edb41f2f944b36d8a02bd0e46ce3c6
+
+if {${name} ne ${subport}} {
+    depends_build   port:py${python.version}-setuptools
+    post-destroot {
+        xinstall -m 755 -d ${destroot}${prefix}/share/doc/${subport}
+        xinstall -m 644 -W ${worksrcpath} CHANGES.rst README.rst \
+            ${destroot}${prefix}/share/doc/${subport}
+    }
+
+    livecheck.type      none
+}

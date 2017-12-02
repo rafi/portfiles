@@ -1,0 +1,23 @@
+diff --git setup.py setup.py
+index 9e074bd..e5ed833 100644
+--- setup.py
++++ setup.py
+@@ -14,7 +14,7 @@ description = 'Alternate keyring implementations'
+
+ params = dict(
+     name=name,
+-    use_scm_version=True,
++    version="2.3",
+     author="Jason R. Coombs",
+     author_email="jaraco@jaraco.com",
+     description=description or name,
+@@ -29,9 +29,6 @@ params = dict(
+     ],
+     extras_require={
+     },
+-    setup_requires=[
+-        'setuptools_scm>=1.15.0',
+-    ],
+     classifiers=[
+         "Development Status :: 5 - Production/Stable",
+         "Intended Audience :: Developers",
