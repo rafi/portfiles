@@ -2,9 +2,9 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        jhawthorn fzy 7b9f9c93fb3a2a9a5abf9468abb9dde85325ac73
+github.setup        jhawthorn fzy 919bae54f53817043f1285034257e05f4a3e2b74
 
-version             20171024
+version             20171118
 categories          textproc
 platforms           darwin
 license             MIT
@@ -14,8 +14,8 @@ description         A better fuzzy finder
 long_description    fzy is faster and shows better results than other \
                     fuzzy finders.
 
-checksums           rmd160  fc30684ef488f8083eb63bebd81734c759f71efd \
-                    sha256  69cd5bb45afe89eafeeff3bf4d9e804f21aa5a9ece51933fc52261e9d252febd
+checksums           rmd160  1917a42d1e5a97b5437419fdcfd59c6c1f5a996f \
+                    sha256  f3d0d5ab3df929b9aa458c3bb40b974f1cad1e7cffb8f8e4feebbee298f665b4
 
 use_configure       no
 

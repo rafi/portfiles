@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        spf13 hugo 0.30.2 v
+github.setup        spf13 hugo 0.36 v
 github.tarball_from releases
 
 name                hugo-bin
@@ -15,8 +15,8 @@ maintainers         {gmail.com:justrafi @rafi} openmaintainer
 description         Fast and Flexible Static Site Generator built with love
 long_description    ${github.project}: ${description}
 
-checksums           rmd160  7e9f67c80c34b6a1ff29191880bd885e517c2d44 \
-                    sha256  8b145eb0c70d4f189c6711a1cc0f74d7e8d573daeeaffff787c5f38b4dd003e8
+checksums           rmd160  4172e37390cac9345545402f6d036a464060629d \
+                    sha256  f8419c8242889d18293ba6c66be9132b4bee4bfe63c50c22cdea08e24a05f9e4
 
 supported_archs     x86_64
 use_configure       no

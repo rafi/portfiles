@@ -2,7 +2,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        so-fancy diff-so-fancy 1.1.1 v
+github.setup        so-fancy diff-so-fancy 1.2.0 v
 
 categories          devel
 platforms           darwin
@@ -13,8 +13,8 @@ description         Good-lookin' diffs. Actually, nah. The best-lookin' diffs.
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  d03fa454b0895f9fccb1681a6008557b2c9b748e \
-                    sha256  da81ee3eb810391825e8fe38a70795748db4fcfb17b5c74f75de0d4e4fcd409a
+checksums           rmd160  0813abf0b171a653844dc3c9aa9587de7ee76ca1 \
+                    sha256  f0f8c3a1a24fe608f1710b03e8dcaea9977041b6086b27ec7e4531fb73224703
 use_configure       no
 
 post-extract {

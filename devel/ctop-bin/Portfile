@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        bcicen ctop 0.6.1 v
+github.setup        bcicen ctop 0.7 v
 github.tarball_from releases
 
 name                ctop-bin
@@ -17,8 +17,8 @@ long_description    ctop provides a concise and condensed overview of \
                     real-time metrics for multiple containers as well \
                     as an expanded view for inspecting a specific container.
 
-checksums           rmd160  2e4c2a6bebbfecc7bfc4b4c4b521915b1c5e79fb \
-                    sha256  fea5e0dd7380330f3b4dc796a6858e7bde557880983b5cf99bcb8f4655287072
+checksums           rmd160  7434ce8e1f3428303e1c491f1c072eeb42092069 \
+                    sha256  2106270f60b7b4774eef4eee05a84a5e3a733077730788840f74d323934c8d0e
 
 supported_archs     x86_64
 extract.suffix      -${os.platform}-amd64

@@ -2,7 +2,7 @@
 
 PortSystem          1.0
 PortGroup           github 1.0
-github.setup        wincent clipper 0.4.2
+github.setup        wincent clipper 1.0
 
 categories          sysutils
 platforms           darwin
@@ -13,8 +13,8 @@ description         Clipboard access for local and remote tmux sessions
 long_description    ${name}: ${description}
 
 supported_archs     noarch
-checksums           rmd160  460af38d9f4a029736a78cc53f7f4ed7826b1c8c \
-                    sha256  6caf8a4ca229dca87e051d23987580eec98c2aefb50e51a0bbf555b5bdada61b
+checksums           rmd160  64955a8d5a4cd16a7f6fda9c2f8f45fa8338c7ec \
+                    sha256  d8cf4970b9fd45abbb04fcc50d65263e863009712b5a627bf1b6c8776d28036a
 
 depends_build   port:go
 use_configure   no
